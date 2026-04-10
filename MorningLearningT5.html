@@ -37,7 +37,10 @@ html,body{width:100vw;height:100vh;overflow:hidden;background:#fff;font-family:'
 .cpanel{display:flex;flex-direction:column;padding:0.5vh 0.8vw;border-right:2.5px solid #EEE;border-bottom:2.5px solid #EEE;overflow:hidden;min-height:0}
 .cpanel:nth-child(2),.cpanel:nth-child(4){border-right:none}
 .cpanel:nth-child(3),.cpanel:nth-child(4){border-bottom:none}
-.cpanel-hdr{font-size:clamp(0.9rem,2vh,1.3rem);font-weight:900;color:#fff;background:#1798d3;border-radius:5px 5px 0 0;padding:0.18em 0.7em;text-align:center;text-transform:uppercase;letter-spacing:0.05em;flex-shrink:0}
+.cpanel-hdr{font-size:clamp(0.9rem,2vh,1.3rem);font-weight:900;color:#fff;background:#1798d3;border-radius:5px 5px 0 0;padding:0.18em 0.7em;text-transform:uppercase;letter-spacing:0.05em;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:0.4em}
+.cpanel-hdr-title{flex:1;text-align:center}
+.reveal-btn{background:rgba(255,255,255,0.22);color:#fff;border:1.5px solid rgba(255,255,255,0.55);border-radius:4px;padding:0.08em 0.55em;font-size:clamp(0.65rem,1.4vh,0.9rem);font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;text-transform:none;letter-spacing:0;flex-shrink:0;white-space:nowrap}
+.reveal-btn:hover{background:rgba(255,255,255,0.4)}
 .cpanel-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.4vh;padding:0.3vh 0;overflow:hidden;min-height:0}
 
 /* anagram */
@@ -72,6 +75,13 @@ html,body{width:100vw;height:100vh;overflow:hidden;background:#fff;font-family:'
 .ooo-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
 .ooo-item{border:2px solid #E0E0E0;border-radius:6px;padding:0.45vh 0.5vw;font-size:clamp(0.9rem,2.2vh,1.5rem);font-weight:700;color:#111;text-align:center;line-height:1.25}
 .ooo-instr{font-size:clamp(0.75rem,1.7vh,1.1rem);color:#AAA;font-style:italic;font-weight:700;text-align:center}
+.tt-lie{border-color:#E03030!important;background:#FFEEEE!important}
+.tt-lie-label{font-size:clamp(0.72rem,1.6vh,1.05rem);color:#C00;font-weight:800;padding:0.2vh 0.5vw;margin-top:0.2vh;background:#FFDDDD;border-radius:4px;text-align:center;width:100%}
+.ooo-odd{border-color:#1798d3!important;background:#E8F4FD!important;color:#0A558C!important;font-weight:900!important}
+.ooo-reason{font-size:clamp(0.7rem,1.55vh,1rem);color:#1798d3;font-weight:700;font-style:italic;padding:0.15vh 0;text-align:center}
+.seq-rule{font-size:clamp(0.7rem,1.55vh,1rem);color:#888;font-weight:700;font-style:italic;text-align:center;margin:-0.1vh 0 0.3vh}
+.ana-blank.filled{display:flex;align-items:center;justify-content:center;font-size:clamp(1rem,2.5vh,1.8rem);font-weight:900;color:#1798d3;border-bottom-color:#1798d3}
+.ana-bonus-blank.filled{display:flex;align-items:center;justify-content:center;font-size:clamp(0.75rem,1.9vh,1.3rem);font-weight:900;color:#1798d3;border-bottom-color:#1798d3}
 
 /* RIGHT PANEL */
 #right-panel{border-left:3px solid #E0E0E0;display:flex;flex-direction:column;padding:1.2vh 1.4vw 0.8vh;gap:0;min-height:0;overflow:hidden}
@@ -201,6 +211,13 @@ html,body{width:100vw;height:100vh;overflow:hidden;background:#fff;font-family:'
 .wyr-btn:hover{background:#1280b8}
 .wyr-working{display:none;margin-top:1vh;width:100%;background:#EBF5FB;border:2px solid #AED6F1;border-radius:9px;padding:1vh 1.2vw;font-size:clamp(0.88rem,2vh,1.35rem);font-weight:700;color:#1A5276;line-height:1.9}
 
+/* ── PAIR LAYOUT ───────────────────────────────────────── */
+.pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;height:100%;overflow:hidden}
+@media(max-width:640px){.pair-grid{grid-template-columns:1fr}}
+.pair-cell{overflow-y:auto;padding:1vh 1.2vw;display:flex;flex-direction:column;gap:0.4vh;border:2px solid #e8e8e8;border-radius:8px;background:#fdfdfd;min-height:0}
+.pair-cell .ptitle{font-size:clamp(0.9rem,2.2vh,1.4rem)!important;margin-bottom:0.2vh!important}
+.pair-cell .wod-word{font-size:clamp(1.5rem,4vh,2.8rem)}
+.pair-cell .stm-para,.pair-cell .est-q,.pair-cell .wyr-q,.pair-cell .map-country,.pair-cell .sna-word,.pair-cell .mn-clue,.pair-cell .shp-name{font-size:clamp(0.9rem,2vh,1.4rem)!important}
 /* TWO TRUTHS EDITOR */
 .tt-bank-item{border:1.5px solid #EEE;border-radius:8px;padding:10px 14px;margin-bottom:8px;position:relative}
 .tt-bank-topic{font-size:0.8rem;font-weight:800;color:#1798d3;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em}
@@ -364,19 +381,19 @@ const MONTHS=['January','February','March','April','May','June','July','August',
 // BOGGLE BANK
 // ═══════════════════════════════════════════════════════════
 const BOGGLE=[
-  {w:'SOMETHING',s:['go','me','so','get','got','hen','him','his','hot','met','net','not','one','set','she','ten','the','tie','tin','toe','ton','come','gone','gosh','home','hone','hose','mesh','most','nose','note','shin','shoe','shot','some','song','them','then','this','tome','tone','notes','stone','those','tones','homes']},
+  {w:'SOMETHING',s:['go','me','so','get','got','hen','him','his','hot','met','net','not','one','set','she','ten','the','tie','tin','toe','ton','come','gone','gosh','home','hone','hose','mesh','most','nose','note','shin','shoe','shot','some','song','them','then','this','tome','tone','notes','stone','those','tones','homes','honest','months','gnomes','toeing','homing','hosting','moisten']},
   {w:'ADVENTURE',s:['and','ant','are','ate','due','ear','eat','end','era','nut','ran','run','rut','tan','tar','ten','vet','aunt','dare','date','dean','dear','dune','earn','near','nude','rate','read','rend','rent','rude','rune','true','tune','turn','vent','under','trade','tuned','turned']},
-  {w:'CHAMPIONS',s:['aim','can','cap','cop','ham','him','hip','his','hop','imp','ion','man','map','nap','pan','pin','sap','sin','sip','son','aims','amps','camp','chai','chin','chip','chop','coin','icon','inch','main','moan','pain','ship','snap','span','spin','champ','chain','coins','sonic','panic','pains']},
+  {w:'CHAMPIONS',s:['aim','can','cap','cop','ham','him','hip','his','hop','imp','ion','man','map','nap','pan','pin','sap','sin','sip','son','aims','amps','camp','chai','chin','chip','chop','coin','icon','inch','main','moan','pain','ship','snap','span','spin','champ','chain','coins','sonic','panic','pains','champs','casino','spinach','phonics']},
   {w:'BIRTHDAYS',s:['aid','air','art','bad','bar','bat','bay','bid','bit','day','dry','had','hat','hay','his','hit','rib','rid','sad','sat','sit','tab','try','arts','bars','bats','bird','days','drab','hair','hard','hats','tabs','tray','yard','diary','habit','tardy','braids']},
   {w:'SPARKLING',s:['air','ark','ask','gin','ink','kin','lag','lap','lip','nag','nap','pan','par','pig','pin','rag','ran','rip','sag','sap','sin','ski','king','lair','laps','lark','link','pals','pang','pans','park','pink','ping','plan','rang','rank','ring','rink','sing','sink','skip','slap','slip','span','spin','kings','plank','spring']},
-  {w:'DANGEROUS',s:['ago','and','are','don','doe','dog','ego','ear','end','era','god','nod','nor','ode','our','rag','ran','rod','roe','rue','run','dare','done','drag','dune','goad','gone','gore','near','node','road','rude','rune','sand','sang','sane','snag','sound','groan','round','under','adorn']},
-  {w:'LANDSCAPE',s:['ace','ale','and','ape','can','cap','den','end','lap','lad','led','pan','pal','pea','sad','sap','sea','cane','cape','clad','clap','clan','deal','dean','lace','lade','land','lane','lead','lean','lend','pale','pals','pane','pans','sane','sand','seal','span','lands','plane','panel']},
-  {w:'BREAKFAST',s:['are','ark','art','ate','bar','bat','ear','eat','far','fat','set','tab','tar','beak','bear','beat','best','east','fare','fast','feat','fret','rake','rate','rest','safe','seat','star','stab','bears','feast','steak','stark','stare','beaks','tears','brake']},
+  {w:'DANGEROUS',s:['ago','and','are','don','doe','dog','ego','ear','end','era','god','nod','nor','ode','our','rag','ran','rod','roe','rue','run','dare','done','drag','dune','goad','gone','gore','near','node','road','rude','rune','sand','sang','sane','snag','sound','groan','round','under','adorn','danger','ranged','orange','snored','drones','rounds','grounds','gardens','dangers','groaned','oranges','ganders']},
+  {w:'LANDSCAPE',s:['ace','ale','and','ape','can','cap','den','end','lap','lad','led','pan','pal','pea','sad','sap','sea','cane','cape','clad','clap','clan','deal','dean','lace','lade','land','lane','lead','lean','lend','pale','pals','pane','pans','sane','sand','seal','span','lands','plane','panel','lanced','placed','pedals','palace','cleans','candles','scandal','clasped']},
+  {w:'BREAKFAST',s:['are','ark','art','ate','bar','bat','ear','eat','far','fat','set','tab','tar','beak','bear','beat','best','east','fare','fast','feat','fret','rake','rate','rest','safe','seat','star','stab','bears','feast','steak','stark','stare','beaks','tears','brake','bakers','basket','brakes','faster','breast','barest','fakers']},
   {w:'THOUSANDS',s:['and','ant','don','dot','had','has','hat','hot','hut','nod','not','nut','out','sad','sat','son','sun','tan','ton','aunt','dash','dots','dust','hand','hunt','nods','nuts','oust','outs','sand','shot','shun','shut','snot','sons','stand','hands','hunts','south','snout','shout']},
   {w:'WONDERFUL',s:['dew','doe','due','elf','end','few','foe','fun','nod','nor','one','ore','owe','owl','rod','roe','rue','run','dune','fond','fore','furl','lone','lore','lure','node','nude','rend','role','rude','rune','under','weld','wolf','word','wore','wren','found','wonder']},
   {w:'CHOCOLATE',s:['ace','ache','ale','cat','eat','hat','hot','lot','oat','the','toe','alto','coat','cola','cool','each','echo','hale','halt','hate','heal','heat','hole','late','lace','tale','teal','cleat','cheat','hotel','cloth','coach','coals']},
   {w:'IMPORTANT',s:['aim','ant','apt','arm','art','imp','ion','man','map','mat','nap','nor','not','oar','opt','pan','par','pat','pin','pit','pot','ran','rat','rim','rip','rot','tan','tap','tar','tip','ton','top','main','moan','morn','pant','part','port','rain','ramp','rant','trim','trio','trip']},
-  {w:'MOUNTAINS',s:['aim','ant','its','man','mat','nit','nut','oat','out','sat','sin','sit','son','sum','sun','tan','tin','ton','aunt','atom','main','mint','moan','moat','nuts','oats','oust','outs','satin','mount','stain','moans','mounts']},
+  {w:'MOUNTAINS',s:['aim','ant','its','man','mat','nit','nut','oat','out','sat','sin','sit','son','sum','sun','tan','tin','ton','aunt','atom','main','mint','moan','moat','nuts','oats','oust','outs','satin','mount','stain','moans','mounts','mantis','suntan','inmost','nations','amounts']},
   {w:'CAREFULLY',s:['ace','arc','are','car','cue','ear','elf','era','far','fur','lay','race','ray','rely','rue','rule','fray','real','clay','clue','earl','fare','fury','furl','fuel','lace','ulcer','early','layer','relay','clear','flare','curly']},
   {w:'QUESTIONS',s:['ion','its','net','not','nit','nut','one','out','set','sit','son','sue','sun','ten','tie','tin','toe','ton','into','ions','nest','nets','nits','nuts','ones','outs','site','tone','tins','toes','unit','units','stone','oust','onset','snout','suite']},
   {w:'STRANGERS',s:['age','ant','are','art','ear','eat','era','gas','get','nag','ran','rag','rat','sag','sat','set','tag','tan','tar','ten','ante','earn','gear','nags','rang','rant','rate','rent','rest','sage','sang','sane','snag','star','stare','stern','tears','great','grant']},
@@ -394,8 +411,8 @@ const BOGGLE=[
   {w:'HALLOWEEN',s:['ale','all','aloe','awl','eon','hale','hall','haw','heal','heel','hew','hewn','hole','how','howl','lane','lawn','lean','lee','lone','low','noel','owe','owl','own','wan','wane','weal','wee','well','woe','won','allow','alone','whale','whole','hello']},
   {w:'AFTERNOON',s:['ant','ante','earn','fare','fern','font','for','fore','fort','fan','foe','not','nor','note','noon','near','neat','oar','often','one','onto','ore','rant','rate','rent','rot','rote','tan','tar','tear','ten','tone','tore','torn','atone','front','orate','tenor']},
   {w:'MATERIALS',s:['ail','aim','ale','arm','art','isle','lame','lair','late','lime','list','lit','male','mare','mast','mate','mire','rail','real','rile','rise','sail','sale','salt','same','slat','slim','star','tail','tale','team','teal','tear','trim','trail','mails','males','mates','miles','rails']},
-  {w:'OVERNIGHT',s:['gore','grin','hire','hit','hoe','hog','hot','into','iron','night','nor','note','over','rein','rig','right','ring','riot','roe','rot','rote','rove','thin','tier','tinge','tire','toe','ton','tore','torn','vein','vent','vine','groin','grove','thorn']},
-  {w:'GARDENING',s:['age','aged','and','dare','dear','dean','den','dig','din','drain','drag','earn','end','era','gain','gear','gin','gird','grid','nag','near','nerd','rage','rain','rang','range','read','rein','rend','ring','rind','aide','daring','diner','drain']},
+  {w:'OVERNIGHT',s:['gore','grin','hire','hit','hoe','hog','hot','into','iron','night','nor','note','over','rein','rig','right','ring','riot','roe','rot','rote','rove','thin','tier','tinge','tire','toe','ton','tore','torn','vein','vent','vine','groin','grove','thorn','region','govern','throng','voting','hoeing']},
+  {w:'GARDENING',s:['age','aged','and','dare','dear','dean','den','dig','din','earn','end','era','gain','gear','gin','gird','grid','nag','near','nerd','rage','rain','rang','range','read','rein','rend','ring','rind','aide','daring','diner','drain','danger','garden','rained','grained','reading','earning','nearing','ranging','nagging']},
   {w:'TRANSLATE',s:['ale','alt','ant','are','art','ate','ear','eat','era','last','late','lean','learn','lent','net','ran','rant','rate','rent','rest','tan','tar','tale','teal','ten','lane','near','nest','salt','seal','sent','slant','stale','steal','tense']},
   {w:'OTHERWISE',s:['her','his','hit','hoe','hot','how','ire','its','ore','owe','row','set','sew','she','sir','sit','tie','toe','tow','two','who','hire','hose','host','rest','riot','rite','rose','rote','shoe','shot','site','sort','sore','stir','store','their','three','tower','white']},
   {w:'PAINTINGS',s:['aim','and','ant','apt','gin','gains','gait','giant','nag','naps','nips','ants','anti','pains','pant','pants','past','pats','ping','pins','pint','pints','pit','saint','sang','satin','sing','snap','snag','span','spin','spit','sting','tags','tins']},
@@ -404,7 +421,7 @@ const BOGGLE=[
   {w:'KNOWLEDGE',s:['doe','dog','dole','done','eel','ego','elk','end','gel','god','gold','gone','good','gown','led','leg','lend','lode','lone','long','look','lore','low','node','noel','owe','owed','owl','wed','woe','woke','wold','glowed','golden','looked','longed']},
   {w:'CLASSROOM',s:['arc','arm','car','clam','coal','cool','log','loom','lore','oar','oral','roam','room','soar','arms','cars','coals','lasso','looms','morals','roams','rooms','solar']},
   {w:'ASTRONAUT',s:['ant','art','oar','oat','our','out','ran','rat','rot','rut','sun','tan','tar','ton','tour','turn','arts','aunt','rant','rout','snot','sort','sour','star','torn','rust','ants','oars','oats','outs','rants','routs','snout','tours','turns','taunt']},
-  {w:'FOOTPRINT',s:['fit','foe','for','fort','into','iron','nit','nor','not','onto','opt','poor','port','pro','riot','rip','root','rot','tip','tin','tint','too','top','torn','trio','trip','font','foot','pint','trod','troop']},
+  {w:'FOOTPRINT',s:['fit','foe','for','fort','into','iron','nit','nor','not','onto','opt','poor','port','pro','riot','rip','root','rot','tip','tin','tint','too','top','torn','trio','trip','font','foot','pint','trod','troop','profit','potion','option','proton','portion']},
   {w:'SURPRISED',s:['die','dip','dire','does','due','dune','ire','pure','purse','ride','ripe','rise','ruse','side','sip','sir','sire','sped','spud','spire','sure','used','pride','prude','dried','prise','spider']},
   {w:'LIBRARIES',s:['ail','air','ale','are','bare','bail','bar','bile','ear','era','isle','ire','lair','lairs','lase','lib','lie','rail','rails','real','rile','riles','rise','sail','sale','seal','sir','sire','aisle','liars','lairs','rails','serial','relies']},
   {w:'DIFFERENT',s:['den','die','dig','din','dire','dirt','end','fen','fend','fern','fie','fin','find','fine','fir','fire','fit','fret','fried','grin','ride','rife','rind','ring','rite','tide','tier','tin','tire','tinder','trend','tried']},
@@ -834,31 +851,31 @@ const SPOT_MISTAKE=[
 // WORD OF THE DAY BANK
 // ═══════════════════════════════════════════════════════════
 const WORD_OF_DAY=[
-  {word:'ambitious',cls:'adjective',def:'Having a strong desire to succeed or achieve something great.',example:'She was ambitious and dreamed of becoming a scientist one day.',origin:"From Latin 'ambitio' meaning 'going around' (to canvass for votes)."},
-  {word:'peculiar',cls:'adjective',def:'Strange or unusual in a way that is hard to explain.',example:'There was a peculiar smell coming from the science lab.',origin:"From Latin 'peculiaris' meaning 'of one's own private property' — something set apart."},
-  {word:'ferocious',cls:'adjective',def:'Savagely fierce, violent or intense.',example:'The ferocious lion roared and the crowd gasped.',origin:"From Latin 'ferox' meaning 'fierce' or 'wild'."},
-  {word:'catastrophe',cls:'noun',def:'A sudden disaster or terrible event that causes great suffering.',example:'The flood was a catastrophe for the whole village.',origin:"From Greek 'katastrophē' meaning 'overturning' or 'sudden end'."},
-  {word:'tenacious',cls:'adjective',def:'Holding on to something firmly; not giving up easily.',example:'The tenacious climber refused to stop until she reached the top.',origin:"From Latin 'tenax' meaning 'holding fast', from 'tenere' — to hold."},
-  {word:'dilemma',cls:'noun',def:'A situation where you have to choose between two difficult options.',example:'He faced a dilemma: should he tell the truth or protect his friend?',origin:"From Greek 'di' (two) + 'lemma' (assumption) — a double problem."},
-  {word:'eloquent',cls:'adjective',def:'Able to use language in a clear, powerful and persuasive way.',example:'The eloquent speaker had the whole audience listening intently.',origin:"From Latin 'eloqui' meaning 'to speak out'."},
-  {word:'bewildered',cls:'adjective',def:'Completely confused and unable to understand what is happening.',example:'The new pupil looked bewildered by all the different rules.',origin:"Old English 'wilder' (to lead astray) with the prefix 'be-'."},
-  {word:'persevere',cls:'verb',def:'To keep trying even when something is difficult or takes a long time.',example:'Even when the puzzle was hard, she continued to persevere.',origin:"From Latin 'perseverare' meaning 'to persist', from 'severus' — strict."},
-  {word:'colossal',cls:'adjective',def:'Extremely large; enormous.',example:'A colossal wave crashed against the rocks during the storm.',origin:"From the Greek 'Kolossós' — the word used for the giant statue, the Colossus of Rhodes."},
-  {word:'abundant',cls:'adjective',def:'Existing in very large quantities; more than enough.',example:'The rainforest has abundant wildlife — it teems with life.',origin:"From Latin 'abundare' meaning 'to overflow', from 'unda' — wave."},
-  {word:'mischievous',cls:'adjective',def:'Tending to cause trouble in a playful way.',example:'The mischievous puppy had chewed through three pairs of shoes.',origin:"From Old French 'meschief' meaning 'bad outcome' or 'misfortune'."},
-  {word:'transparent',cls:'adjective',def:'Easy to see through; clear. Can also mean honest and open.',example:'The glass was so transparent you could see every fish in the tank.',origin:"From Medieval Latin 'transparere' — to show through."},
-  {word:'vibrant',cls:'adjective',def:'Full of energy and life; bright and striking.',example:'The carnival was vibrant, with music, colour and laughter everywhere.',origin:"From Latin 'vibrare' meaning 'to shake' or 'to move quickly'."},
-  {word:'collaborate',cls:'verb',def:'To work together with someone else towards a shared goal.',example:'The two scientists decided to collaborate on the experiment.',origin:"From Latin 'collaborare' — 'col' (together) + 'laborare' (to work)."},
-  {word:'exquisite',cls:'adjective',def:'Extremely beautiful and delicate; very finely made.',example:'The jeweller created an exquisite necklace out of tiny silver beads.',origin:"From Latin 'exquisitus' meaning 'carefully sought out'."},
-  {word:'turbulent',cls:'adjective',def:'Moving in an irregular, wild or violent way; full of disturbance.',example:'The pilot warned passengers to expect turbulent weather ahead.',origin:"From Latin 'turbulentus' meaning 'full of commotion', from 'turba' — crowd."},
-  {word:'empathy',cls:'noun',def:'The ability to understand and share the feelings of another person.',example:'She showed great empathy when her friend was upset.',origin:"From Greek 'empatheia' — 'em' (in) + 'pathos' (feeling)."},
-  {word:'majestic',cls:'adjective',def:'Having great beauty, power or dignity; impressive.',example:'The majestic eagle soared above the mountains.',origin:"From Latin 'maiestas' meaning 'greatness' or 'dignity'."},
-  {word:'inevitable',cls:'adjective',def:'Certain to happen; impossible to avoid.',example:'With such dark clouds, rain seemed inevitable.',origin:"From Latin 'inevitabilis' — 'in' (not) + 'evitare' (to avoid)."},
-  {word:'simultaneously',cls:'adverb',def:'At exactly the same time.',example:'The twins spoke simultaneously and said the exact same thing.',origin:"From Latin 'simul' meaning 'at the same time'."},
-  {word:'hypothesis',cls:'noun',def:'A suggested explanation for something that can be tested.',example:"The scientist wrote a hypothesis before starting the experiment.",origin:"From Greek 'hypothesis' meaning 'foundation' or 'supposition'."},
-  {word:'metamorphosis',cls:'noun',def:'A complete change in form, especially during development.',example:'The caterpillar undergoes a metamorphosis to become a butterfly.',origin:"From Greek 'metamorphoun' — 'meta' (change) + 'morphe' (form)."},
-  {word:'scrutinise',cls:'verb',def:'To look at or examine something very carefully.',example:'The detective began to scrutinise every clue at the crime scene.',origin:"From Latin 'scrutinium' — originally 'to sort through rubbish' (scrutinium = rag-picking)."},
-  {word:'exhilarating',cls:'adjective',def:'Making you feel very excited and alive; thrilling.',example:'Riding the rollercoaster was absolutely exhilarating.', origin:"From Latin 'exhilarare' meaning 'to gladden' or 'cheer up'."}
+  {word:'ambitious',cls:'adjective',def:'Having a strong desire to succeed or achieve something great.',example:'She was ambitious and dreamed of becoming a scientist one day.',origin:"From Latin 'ambitio' meaning 'going around' (to canvass for votes).",syns:['determined','driven','motivated'],ants:['lazy','content','unmotivated']},
+  {word:'peculiar',cls:'adjective',def:'Strange or unusual in a way that is hard to explain.',example:'There was a peculiar smell coming from the science lab.',origin:"From Latin 'peculiaris' meaning 'of one's own private property' — something set apart.",syns:['strange','unusual','odd'],ants:['normal','ordinary','typical']},
+  {word:'ferocious',cls:'adjective',def:'Savagely fierce, violent or intense.',example:'The ferocious lion roared and the crowd gasped.',origin:"From Latin 'ferox' meaning 'fierce' or 'wild'.",syns:['fierce','savage','violent'],ants:['gentle','mild','calm']},
+  {word:'catastrophe',cls:'noun',def:'A sudden disaster or terrible event that causes great suffering.',example:'The flood was a catastrophe for the whole village.',origin:"From Greek 'katastrophē' meaning 'overturning' or 'sudden end'.",syns:['disaster','tragedy','calamity'],ants:['blessing','triumph','success']},
+  {word:'tenacious',cls:'adjective',def:'Holding on to something firmly; not giving up easily.',example:'The tenacious climber refused to stop until she reached the top.',origin:"From Latin 'tenax' meaning 'holding fast', from 'tenere' — to hold.",syns:['persistent','determined','stubborn'],ants:['weak','yielding','giving up']},
+  {word:'dilemma',cls:'noun',def:'A situation where you have to choose between two difficult options.',example:'He faced a dilemma: should he tell the truth or protect his friend?',origin:"From Greek 'di' (two) + 'lemma' (assumption) — a double problem.",syns:['problem','predicament','puzzle'],ants:['solution','answer','certainty']},
+  {word:'eloquent',cls:'adjective',def:'Able to use language in a clear, powerful and persuasive way.',example:'The eloquent speaker had the whole audience listening intently.',origin:"From Latin 'eloqui' meaning 'to speak out'.",syns:['articulate','fluent','expressive'],ants:['inarticulate','mumbling','unclear']},
+  {word:'bewildered',cls:'adjective',def:'Completely confused and unable to understand what is happening.',example:'The new pupil looked bewildered by all the different rules.',origin:"Old English 'wilder' (to lead astray) with the prefix 'be-'.",syns:['confused','baffled','puzzled'],ants:['certain','clear-headed','calm']},
+  {word:'persevere',cls:'verb',def:'To keep trying even when something is difficult or takes a long time.',example:'Even when the puzzle was hard, she continued to persevere.',origin:"From Latin 'perseverare' meaning 'to persist', from 'severus' — strict.",syns:['persist','continue','keep going'],ants:['give up','quit','stop']},
+  {word:'colossal',cls:'adjective',def:'Extremely large; enormous.',example:'A colossal wave crashed against the rocks during the storm.',origin:"From the Greek 'Kolossós' — the word used for the giant statue, the Colossus of Rhodes.",syns:['enormous','gigantic','massive'],ants:['tiny','miniature','small']},
+  {word:'abundant',cls:'adjective',def:'Existing in very large quantities; more than enough.',example:'The rainforest has abundant wildlife — it teems with life.',origin:"From Latin 'abundare' meaning 'to overflow', from 'unda' — wave.",syns:['plentiful','bountiful','ample'],ants:['scarce','sparse','limited']},
+  {word:'mischievous',cls:'adjective',def:'Tending to cause trouble in a playful way.',example:'The mischievous puppy had chewed through three pairs of shoes.',origin:"From Old French 'meschief' meaning 'bad outcome' or 'misfortune'.",syns:['naughty','cheeky','playful'],ants:['well-behaved','obedient','sensible']},
+  {word:'transparent',cls:'adjective',def:'Easy to see through; clear. Can also mean honest and open.',example:'The glass was so transparent you could see every fish in the tank.',origin:"From Medieval Latin 'transparere' — to show through.",syns:['clear','see-through','honest'],ants:['opaque','murky','secretive']},
+  {word:'vibrant',cls:'adjective',def:'Full of energy and life; bright and striking.',example:'The carnival was vibrant, with music, colour and laughter everywhere.',origin:"From Latin 'vibrare' meaning 'to shake' or 'to move quickly'.",syns:['lively','bright','energetic'],ants:['dull','lifeless','muted']},
+  {word:'collaborate',cls:'verb',def:'To work together with someone else towards a shared goal.',example:'The two scientists decided to collaborate on the experiment.',origin:"From Latin 'collaborare' — 'col' (together) + 'laborare' (to work).",syns:['cooperate','team up','work together'],ants:['compete','oppose','work alone']},
+  {word:'exquisite',cls:'adjective',def:'Extremely beautiful and delicate; very finely made.',example:'The jeweller created an exquisite necklace out of tiny silver beads.',origin:"From Latin 'exquisitus' meaning 'carefully sought out'.",syns:['beautiful','delicate','stunning'],ants:['ugly','plain','coarse']},
+  {word:'turbulent',cls:'adjective',def:'Moving in an irregular, wild or violent way; full of disturbance.',example:'The pilot warned passengers to expect turbulent weather ahead.',origin:"From Latin 'turbulentus' meaning 'full of commotion', from 'turba' — crowd.",syns:['stormy','wild','rough'],ants:['calm','peaceful','still']},
+  {word:'empathy',cls:'noun',def:'The ability to understand and share the feelings of another person.',example:'She showed great empathy when her friend was upset.',origin:"From Greek 'empatheia' — 'em' (in) + 'pathos' (feeling).",syns:['compassion','understanding','sympathy'],ants:['indifference','coldness','cruelty']},
+  {word:'majestic',cls:'adjective',def:'Having great beauty, power or dignity; impressive.',example:'The majestic eagle soared above the mountains.',origin:"From Latin 'maiestas' meaning 'greatness' or 'dignity'.",syns:['grand','magnificent','impressive'],ants:['ordinary','humble','plain']},
+  {word:'inevitable',cls:'adjective',def:'Certain to happen; impossible to avoid.',example:'With such dark clouds, rain seemed inevitable.',origin:"From Latin 'inevitabilis' — 'in' (not) + 'evitare' (to avoid).",syns:['certain','unavoidable','destined'],ants:['avoidable','uncertain','unlikely']},
+  {word:'simultaneously',cls:'adverb',def:'At exactly the same time.',example:'The twins spoke simultaneously and said the exact same thing.',origin:"From Latin 'simul' meaning 'at the same time'.",syns:['at once','together','concurrently'],ants:['separately','in turn','one by one']},
+  {word:'hypothesis',cls:'noun',def:'A suggested explanation for something that can be tested.',example:"The scientist wrote a hypothesis before starting the experiment.",origin:"From Greek 'hypothesis' meaning 'foundation' or 'supposition'.",syns:['theory','idea','suggestion'],ants:['fact','certainty','proof']},
+  {word:'metamorphosis',cls:'noun',def:'A complete change in form, especially during development.',example:'The caterpillar undergoes a metamorphosis to become a butterfly.',origin:"From Greek 'metamorphoun' — 'meta' (change) + 'morphe' (form).",syns:['transformation','change','development'],ants:['stability','sameness','permanence']},
+  {word:'scrutinise',cls:'verb',def:'To look at or examine something very carefully.',example:'The detective began to scrutinise every clue at the crime scene.',origin:"From Latin 'scrutinium' — originally 'to sort through rubbish' (scrutinium = rag-picking).",syns:['examine','inspect','study closely'],ants:['ignore','overlook','miss']},
+  {word:'exhilarating',cls:'adjective',def:'Making you feel very excited and alive; thrilling.',example:'Riding the rollercoaster was absolutely exhilarating.', origin:"From Latin 'exhilarare' meaning 'to gladden' or 'cheer up'.",syns:['thrilling','exciting','invigorating'],ants:['boring','dull','tedious']}
 ];
 
 // ═══════════════════════════════════════════════════════════
@@ -1364,7 +1381,7 @@ function getTTSet(){
 // STATE & INIT
 // ═══════════════════════════════════════════════════════════
 let pType='boggle',cur=null,solsOpen=false;
-const ALL_TYPES=['boggle','number','combined','spotmistake','wordofday','synant','magicnumber','shapeday','estimation','mapchallenge','timeline','wouldyourather'];
+const ALL_TYPES=['boggle','number','combined','literacy','vocab','mathsreason','mathsshape','humanities'];
 
 function init(){
   renderDate();renderLunch();renderMsg();loadImg();
@@ -1435,6 +1452,26 @@ function newPuzzle(){
   } else if(pType==='wouldyourather'){
     const e=WOULD_YOU_RATHER[Math.floor(Math.random()*WOULD_YOU_RATHER.length)];
     cur={type:'wouldyourather',data:e};renderWouldYouRather(e);
+  } else if(pType==='literacy'){
+    const eA=WORD_OF_DAY[Math.floor(Math.random()*WORD_OF_DAY.length)];
+    const eB=SPOT_MISTAKE[Math.floor(Math.random()*SPOT_MISTAKE.length)];
+    cur={type:'literacy',dataA:eA,dataB:eB};renderPairLiteracy(eA,eB);
+  } else if(pType==='vocab'){
+    const eA=WORD_OF_DAY[Math.floor(Math.random()*WORD_OF_DAY.length)];
+    const eB=SYN_ANT[Math.floor(Math.random()*SYN_ANT.length)];
+    cur={type:'vocab',dataA:eA,dataB:eB};renderPairVocab(eA,eB);
+  } else if(pType==='mathsreason'){
+    const eA=MAGIC_NUMBER_CLEAN[Math.floor(Math.random()*MAGIC_NUMBER_CLEAN.length)];
+    const eB=WOULD_YOU_RATHER[Math.floor(Math.random()*WOULD_YOU_RATHER.length)];
+    cur={type:'mathsreason',dataA:eA,dataB:eB};renderPairMathsReason(eA,eB);
+  } else if(pType==='mathsshape'){
+    const eA=SHAPES[Math.floor(Math.random()*SHAPES.length)];
+    const eB=ESTIMATION[Math.floor(Math.random()*ESTIMATION.length)];
+    cur={type:'mathsshape',dataA:eA,dataB:eB};renderPairMathsShape(eA,eB);
+  } else if(pType==='humanities'){
+    const eA=MAP_CHALLENGE[Math.floor(Math.random()*MAP_CHALLENGE.length)];
+    const eB=TIMELINE_SETS[Math.floor(Math.random()*TIMELINE_SETS.length)];
+    cur={type:'humanities',dataA:eA,dataB:eB};renderPairHumanities(eA,eB);
   }
   closeSols();
 }
@@ -1513,7 +1550,7 @@ function renderCombined(){
 
   cp.innerHTML=`
     <div class="cpanel">
-      <div class="cpanel-hdr">Anagram</div>
+      <div class="cpanel-hdr"><span class="cpanel-hdr-title">Anagram</span><button class="reveal-btn" onclick="revealAnagram(this)">👁 Reveal</button></div>
       <div class="cpanel-body">
         <div class="ana-main">${scrambleMain}</div>
         <div class="ana-blanks">${[...aSet.main].map(()=>'<div class="ana-blank"></div>').join('')}</div>
@@ -1522,14 +1559,14 @@ function renderCombined(){
       </div>
     </div>
     <div class="cpanel">
-      <div class="cpanel-hdr">Sequences</div>
+      <div class="cpanel-hdr"><span class="cpanel-hdr-title">Sequences</span><button class="reveal-btn" onclick="revealSequences(this)">👁 Reveal</button></div>
       <div class="cpanel-body">
         ${seqHtml}
         <div class="seq-instr">Write the next number and the rule</div>
       </div>
     </div>
     <div class="cpanel">
-      <div class="cpanel-hdr">Two Truths &amp; a Lie</div>
+      <div class="cpanel-hdr"><span class="cpanel-hdr-title">Two Truths &amp; a Lie</span><button class="reveal-btn" onclick="revealTwoTruths(this)">👁 Reveal</button></div>
       <div class="cpanel-body">
         <div class="tt-topic">${tt.topic}</div>
         ${ttHtml}
@@ -1537,12 +1574,74 @@ function renderCombined(){
       </div>
     </div>
     <div class="cpanel">
-      <div class="cpanel-hdr">Odd One Out</div>
+      <div class="cpanel-hdr"><span class="cpanel-hdr-title">Odd One Out</span><button class="reveal-btn" onclick="revealOddOneOut(this)">👁 Reveal</button></div>
       <div class="cpanel-body">
         ${oooHtml}
         <div class="ooo-instr">Write which and why for each set</div>
       </div>
     </div>`;
+}
+
+function revealAnagram(btn){
+  const cp=document.getElementById('combined-panel');
+  const mainBlanks=cp.querySelectorAll('.ana-blanks .ana-blank');
+  [...cur.anaSet.main].forEach((ch,i)=>{
+    if(mainBlanks[i]){mainBlanks[i].textContent=ch.toUpperCase();mainBlanks[i].classList.add('filled');}
+  });
+  cur.anaSet.bonus.forEach((b,bi)=>{
+    const rows=cp.querySelectorAll('.ana-bonus-row');
+    if(rows[bi]){
+      const bonusBlanks=rows[bi].querySelectorAll('.ana-bonus-blank');
+      [...b.w].forEach((ch,i)=>{if(bonusBlanks[i]){bonusBlanks[i].textContent=ch.toUpperCase();bonusBlanks[i].classList.add('filled');}});
+    }
+  });
+  btn.style.display='none';
+}
+
+function revealSequences(btn){
+  const cp=document.getElementById('combined-panel');
+  const rows=cp.querySelectorAll('.seq-row');
+  cur.seqs.forEach((s,i)=>{
+    if(rows[i]){
+      const qCell=rows[i].querySelector('.seq-n.q');
+      if(qCell){qCell.textContent=s.next;qCell.style.background='#D5F5E3';qCell.style.borderColor='#27AE60';qCell.style.color='#145A32';}
+      const ruleDiv=document.createElement('div');
+      ruleDiv.className='seq-rule';
+      ruleDiv.textContent='Rule: '+s.rule;
+      rows[i].insertAdjacentElement('afterend',ruleDiv);
+    }
+  });
+  btn.style.display='none';
+}
+
+function revealTwoTruths(btn){
+  const cp=document.getElementById('combined-panel');
+  const items=cp.querySelectorAll('.tt-item');
+  const lieIdx=cur.tt.lie-1;
+  if(items[lieIdx]){
+    items[lieIdx].classList.add('tt-lie');
+    const label=document.createElement('div');
+    label.className='tt-lie-label';
+    label.textContent='🔴 Statement '+cur.tt.lie+' is the lie!';
+    items[lieIdx].insertAdjacentElement('afterend',label);
+  }
+  btn.style.display='none';
+}
+
+function revealOddOneOut(btn){
+  const cp=document.getElementById('combined-panel');
+  const sets=cp.querySelectorAll('.ooo-set');
+  cur.oooSets.forEach((s,si)=>{
+    if(sets[si]){
+      const items=sets[si].querySelectorAll('.ooo-item');
+      if(items[s.odd])items[s.odd].classList.add('ooo-odd');
+      const reasonDiv=document.createElement('div');
+      reasonDiv.className='ooo-reason';
+      reasonDiv.textContent='💡 '+s.reason;
+      sets[si].querySelector('.ooo-grid').insertAdjacentElement('afterend',reasonDiv);
+    }
+  });
+  btn.style.display='none';
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -1560,7 +1659,7 @@ function renderSpotMistake(e){
     <div class="stm-ans-list" id="stm-ans" style="display:none"></div>`;
 }
 function revealStmAnswers(){
-  const e=cur.data;
+  const e=cur.dataB||cur.data;
   document.getElementById('stm-ans').style.display='block';
   document.getElementById('stm-ans').innerHTML='<strong style="color:#E03030">Mistakes found:</strong><br>'+
     e.errors.map((er,i)=>`<div class="stm-ans-item"><b>${i+1}.</b> <span style="background:#FFDDDD;border-radius:3px;padding:0 3px">"${er.wrong}"</span> → <span style="background:#DDFFDD;border-radius:3px;padding:0 3px">"${er.correct}"</span><br><span style="color:#555;font-size:0.9em">${er.exp}</span></div>`).join('');
@@ -1602,10 +1701,25 @@ function renderSynAnt(e){
     </div>
     <button class="sna-btn" onclick="revealSynAnt()">Reveal</button>`;
 }
+function revealWodExamples(btn){
+  const e=cur.dataA||cur.data;
+  const box=document.getElementById('wod-examples');
+  if(box&&e.syns){
+    box.innerHTML=`<div style="color:#145A32">📗 Synonyms: ${e.syns.join(' • ')}</div><div style="color:#C00030;margin-top:0.2vh">📕 Antonyms: ${e.ants.join(' • ')}</div>`;
+    box.style.display='block';
+  }
+  const prompts=document.getElementById('wod-prompts');
+  if(prompts)prompts.style.display='none';
+  btn.style.display='none';
+}
 function revealSynAnt(){
-  const e=cur.data;
-  document.getElementById('sna-syns').innerHTML=e.syns.join('<br>');
-  document.getElementById('sna-ants').innerHTML=e.ants.join('<br>');
+  const e=cur.dataB||cur.data;
+  document.getElementById('sna-syns').innerHTML=e.syns.join(' • ');
+  document.getElementById('sna-ants').innerHTML=e.ants.join(' • ');
+  const instr=document.querySelector('.sna-instr');
+  if(instr)instr.style.display='none';
+  const btn=document.querySelector('.sna-btn');
+  if(btn)btn.style.display='none';
 }
 
 function renderMagicNumber(e){
@@ -1626,21 +1740,24 @@ function revealMagicNumber(){
 
 function renderShapeDay(e){
   const pp=document.getElementById('puzzle-panel');
-  pp.style.cssText='display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:1.5vh 2vw;gap:0.4vh;overflow-y:auto';
+  pp.style.cssText='display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:1.5vh 2vw;gap:0.4vh;overflow:hidden;height:100%';
   pp.innerHTML=`
     <div class="ptitle" style="font-size:clamp(1rem,2.5vh,1.6rem);color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Shape of the Day</div>
     <div class="shp-name">${e.name}</div>
     <div class="shp-type">${e.type}</div>
-    <div class="shp-qs" style="width:100%">
+    <div id="shp-qs" class="shp-qs" style="width:100%">
       ${e.questions.map(q=>`<div class="shp-q">❓ ${q}</div>`).join('')}
     </div>
-    <button class="shp-btn" onclick="revealShapeProps()">Show Properties</button>
-    <div class="shp-props" id="shp-props">
+    <div id="shp-props" class="shp-props">
       ${e.properties.map((p,i)=>`<div>✅ ${e.questions[i]}<br><strong>${p}</strong></div>`).join('<hr style="border:none;border-top:1px solid #AED6F1;margin:0.4vh 0">')}
-    </div>`;
+    </div>
+    <button class="shp-btn" onclick="revealShapeProps(this)">Show Properties</button>`;
 }
-function revealShapeProps(){
-  document.getElementById('shp-props').style.display='block';
+function revealShapeProps(btn){
+  const qs=document.getElementById('shp-qs'),props=document.getElementById('shp-props');
+  if(qs)qs.style.display='none';
+  if(props)props.style.display='block';
+  if(btn)btn.style.display='none';
 }
 
 function renderEstimation(e){
@@ -1662,44 +1779,51 @@ function revealEstimation(){
 
 function renderMapChallenge(e){
   const pp=document.getElementById('puzzle-panel');
-  pp.style.cssText='display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:1.5vh 2vw;gap:0.5vh;overflow-y:auto';
+  pp.style.cssText='display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:1.5vh 2vw;gap:0.5vh;overflow:hidden;height:100%';
   pp.innerHTML=`
     <div class="ptitle" style="font-size:clamp(1rem,2.5vh,1.6rem);color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Map Challenge 🗺️</div>
     <div class="map-country">${e.country}</div>
-    <div class="map-facts" style="width:100%">
+    <div class="map-facts" style="width:100%;line-height:1.6">
       ${e.facts.map(f=>`<div>🌍 ${f}</div>`).join('')}
     </div>
-    <div class="map-qs" style="width:100%">
-      ${e.questions.map((q,i)=>`<div>❓ ${q}</div>`).join('')}
+    <div id="map-qs" class="map-qs" style="width:100%;line-height:1.7">
+      ${e.questions.map(q=>`<div>❓ ${q}</div>`).join('')}
     </div>
-    <button class="map-btn" onclick="revealMapAnswers()">Show Answers</button>
-    <div class="map-ans" id="map-ans" style="width:100%">
+    <div id="map-ans" class="map-ans" style="width:100%">
       ${e.answers.map((a,i)=>`<div>✅ <em>${e.questions[i]}</em><br><strong>${a}</strong></div>`).join('<hr style="border:none;border-top:1px solid #AED6F1;margin:0.4vh 0">')}
-    </div>`;
+    </div>
+    <button class="map-btn" onclick="revealMapAnswers(this)">Show Answers</button>`;
 }
-function revealMapAnswers(){
-  document.getElementById('map-ans').style.display='block';
+function revealMapAnswers(btn){
+  const qs=document.getElementById('map-qs'),ans=document.getElementById('map-ans');
+  if(qs)qs.style.display='none';
+  if(ans)ans.style.display='block';
+  if(btn)btn.style.display='none';
 }
 
 function renderTimeline(e){
   const pp=document.getElementById('puzzle-panel');
-  pp.style.cssText='display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:1.5vh 2vw;gap:0.5vh;overflow-y:auto';
-  // shuffle the events for display
+  pp.style.cssText='display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:1.5vh 2vw;gap:0.5vh;overflow:hidden;height:100%';
   const displayOrder=shuffle([...e.events]);
+  const sorted=[...e.events].sort((a,b)=>a.year-b.year);
   pp.innerHTML=`
     <div class="ptitle" style="font-size:clamp(1rem,2.5vh,1.6rem);color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Timeline Puzzle 📅</div>
     <div class="ptitle" style="font-size:clamp(1.2rem,3vh,2rem);margin-bottom:0.3vh">${e.title}</div>
-    <div class="tl-instr">Put these events in chronological order (oldest first). Write numbers 1–5 beside each event.</div>
-    <div class="tl-events" style="width:100%">
+    <div id="tl-instr" class="tl-instr">Put in order — oldest first. Write 1–5 beside each.</div>
+    <div id="tl-events" class="tl-events" style="width:100%">
       ${displayOrder.map((ev,i)=>`<div class="tl-event"><div class="tl-event-num">${String.fromCharCode(65+i)}</div><div class="tl-event-text">${ev.text}</div></div>`).join('')}
     </div>
-    <button class="tl-btn" onclick="revealTimeline()">Reveal Order</button>
-    <div id="tl-sorted" style="display:none;width:100%;margin-top:0.5vh">
-      ${[...e.events].sort((a,b)=>a.year-b.year).map((ev,i)=>`<div class="tl-sorted-item"><span class="tl-year">${ev.year<0?Math.abs(ev.year)+' BC':ev.year+' AD'}</span>${ev.text}</div>`).join('')}
-    </div>`;
+    <div id="tl-sorted" style="display:none;width:100%">
+      ${sorted.map((ev,i)=>`<div class="tl-sorted-item"><span class="tl-year">${ev.year<0?Math.abs(ev.year)+' BC':ev.year+' AD'}</span>${ev.text}</div>`).join('')}
+    </div>
+    <button class="tl-btn" onclick="revealTimeline(this)">Reveal Order</button>`;
 }
-function revealTimeline(){
-  document.getElementById('tl-sorted').style.display='block';
+function revealTimeline(btn){
+  const ev=document.getElementById('tl-events'),instr=document.getElementById('tl-instr'),s=document.getElementById('tl-sorted');
+  if(ev)ev.style.display='none';
+  if(instr)instr.style.display='none';
+  if(s)s.style.display='block';
+  if(btn)btn.style.display='none';
 }
 
 function renderWouldYouRather(e){
@@ -1728,6 +1852,154 @@ function revealWouldYouRather(){
 }
 
 // ═══════════════════════════════════════════════════════════
+// PAIR RENDER HELPERS
+// ═══════════════════════════════════════════════════════════
+function pairShell(){
+  const pp=document.getElementById('puzzle-panel');
+  pp.style.cssText='display:flex;flex-direction:column;padding:6px;gap:0;overflow:hidden;height:100%';
+  pp.innerHTML='<div class="pair-grid" id="pair-grid"></div>';
+  const g=document.getElementById('pair-grid');
+  const a=document.createElement('div'); a.className='pair-cell'; a.id='pair-a';
+  const b=document.createElement('div'); b.className='pair-cell'; b.id='pair-b';
+  g.appendChild(a); g.appendChild(b);
+  return [a,b];
+}
+
+function renderPairLiteracy(eA,eB){
+  const [a,b]=pairShell();
+  // Word of the Day (left)
+  a.innerHTML=`
+    <div class="ptitle" style="color:#888;text-transform:uppercase;letter-spacing:.1em">Word of the Day</div>
+    <div class="wod-word">${eA.word}</div>
+    <div class="wod-class">${eA.cls}</div>
+    <div class="wod-def">${eA.def}</div>
+    <div class="wod-example">"${eA.example}"</div>
+    <div class="wod-etymology">📚 ${eA.origin}</div>
+    <div id="wod-prompts" class="wod-qs" style="width:100%;font-size:clamp(0.8rem,1.7vh,1.1rem)">
+      <div>💡 Think of a <strong>synonym</strong></div>
+      <div>💡 Think of an <strong>antonym</strong></div>
+      <div>💡 Use <strong>${eA.word}</strong> in a sentence</div>
+    </div>
+    <button class="stm-btn" style="margin-top:0.3vh" onclick="revealWodExamples(this)">Show examples</button>
+    <div id="wod-examples" style="display:none;width:100%;background:#F0FFF0;border:2px solid #A9DFBF;border-radius:7px;padding:0.5vh 0.8vw;font-size:clamp(0.8rem,1.8vh,1.2rem);font-weight:700;line-height:1.8"></div>`;
+  // Spot the Mistake (right)
+  b.innerHTML=`
+    <div class="ptitle">Spot the Mistake</div>
+    <div class="stm-para">${eB.para}</div>
+    <div class="stm-count">There are <strong>${eB.count}</strong> mistakes hidden.</div>
+    <button class="stm-btn" onclick="revealStmAnswers()">Show Answers</button>
+    <div class="stm-ans-list" id="stm-ans" style="display:none"></div>`;
+}
+
+function renderPairVocab(eA,eB){
+  const [a,b]=pairShell();
+  // Word of the Day (left)
+  a.innerHTML=`
+    <div class="ptitle" style="color:#888;text-transform:uppercase;letter-spacing:.1em">Word of the Day</div>
+    <div class="wod-word">${eA.word}</div>
+    <div class="wod-class">${eA.cls}</div>
+    <div class="wod-def">${eA.def}</div>
+    <div class="wod-example">"${eA.example}"</div>
+    <div class="wod-etymology">📚 ${eA.origin}</div>`;
+  // Synonym & Antonym (right)
+  b.innerHTML=`
+    <div class="ptitle" style="color:#888;text-transform:uppercase;letter-spacing:.1em">Synonym &amp; Antonym</div>
+    <div class="sna-word">${eB.word}</div>
+    <div class="sna-instr">How many can you think of? ⏱️</div>
+    <div class="sna-cols" style="width:100%">
+      <div><div class="sna-col-hdr syn">SYNONYMS</div><div class="sna-col-body" id="sna-syns">Same meaning as <em>${eB.word}</em></div></div>
+      <div><div class="sna-col-hdr ant">ANTONYMS</div><div class="sna-col-body" id="sna-ants">Opposite of <em>${eB.word}</em></div></div>
+    </div>
+    <button class="sna-btn" onclick="revealSynAnt()">Reveal</button>`;
+}
+
+function renderPairMathsReason(eA,eB){
+  const [a,b]=pairShell();
+  // Magic Number (left)
+  a.innerHTML=`
+    <div class="ptitle">Today's Magic Number 🔢</div>
+    <div style="font-size:clamp(0.8rem,1.8vh,1.1rem);color:#888;font-weight:700;text-align:center;margin-bottom:0.3vh">Read the clues — what is the mystery number?</div>
+    <div class="mn-clues" style="width:100%">
+      ${eA.clues.map((c,i)=>`<div class="mn-clue"><div class="mn-clue-num">${i+1}</div>${c}</div>`).join('')}
+    </div>
+    <button class="mn-btn" onclick="revealMagicNumber()">Reveal</button>
+    <div class="mn-answer" id="mn-answer">${eA.answer}</div>`;
+  // Would You Rather (right)
+  b.innerHTML=`
+    <div class="ptitle">Would You Rather… 🤔</div>
+    <div class="wyr-q">${eB.question}</div>
+    <div class="wyr-opts" style="width:100%">
+      <div class="wyr-opt">${eB.optA}</div>
+      <div class="wyr-or">OR</div>
+      <div class="wyr-opt">${eB.optB}</div>
+    </div>
+    <button class="wyr-btn" onclick="revealWouldYouRather()">Show Working</button>
+    <div class="wyr-working" id="wyr-working" style="width:100%">
+      <div><strong>A:</strong> ${eB.workingA}</div>
+      <div><strong>B:</strong> ${eB.workingB}</div>
+      <div style="margin-top:0.4vh;border-top:2px solid #AED6F1;padding-top:0.4vh;color:#1798d3"><strong>Answer:</strong> ${eB.answer}</div>
+    </div>`;
+}
+
+function renderPairMathsShape(eA,eB){
+  const [a,b]=pairShell();
+  // Shape of the Day (left)
+  a.innerHTML=`
+    <div class="ptitle" style="color:#888;text-transform:uppercase;letter-spacing:.1em">Shape of the Day</div>
+    <div class="shp-name">${eA.name}</div>
+    <div class="shp-type">${eA.type}</div>
+    <div id="shp-qs" class="shp-qs" style="width:100%">
+      ${eA.questions.map(q=>`<div class="shp-q">❓ ${q}</div>`).join('')}
+    </div>
+    <div id="shp-props" class="shp-props">
+      ${eA.properties.map((p,i)=>`<div>✅ ${eA.questions[i]}<br><strong>${p}</strong></div>`).join('<hr style="border:none;border-top:1px solid #AED6F1;margin:0.3vh 0">')}
+    </div>
+    <button class="shp-btn" onclick="revealShapeProps(this)">Show Properties</button>`;
+  // Estimation Station (right)
+  b.innerHTML=`
+    <div class="ptitle">Estimation Station 🔢</div>
+    <div class="est-q">${eB.question}</div>
+    <div class="est-instr">Think — then share your estimate.</div>
+    <button class="est-btn" onclick="revealEstimation()">Reveal Answer</button>
+    <div class="est-ans" id="est-ans">
+      <div style="font-size:clamp(1.1rem,3vh,2rem)">${eB.answer}</div>
+      <div style="font-size:clamp(0.8rem,1.7vh,1.1rem);color:#145A32;font-weight:700;margin-top:0.3vh">${eB.explanation}</div>
+    </div>`;
+}
+
+function renderPairHumanities(eA,eB){
+  const [a,b]=pairShell();
+  // Map Challenge (left)
+  a.innerHTML=`
+    <div class="ptitle" style="color:#888;text-transform:uppercase;letter-spacing:.1em">Map Challenge 🗺️</div>
+    <div class="map-country">${eA.country}</div>
+    <div class="map-facts" style="width:100%;line-height:1.5">
+      ${eA.facts.map(f=>`<div>🌍 ${f}</div>`).join('')}
+    </div>
+    <div id="map-qs" class="map-qs" style="width:100%;line-height:1.6">
+      ${eA.questions.map(q=>`<div>❓ ${q}</div>`).join('')}
+    </div>
+    <div id="map-ans" class="map-ans" style="width:100%">
+      ${eA.answers.map((a,i)=>`<div>✅ <strong>${eA.questions[i]}</strong><br>${a}</div>`).join('<hr style="border:none;border-top:1px solid #AED6F1;margin:0.3vh 0">')}
+    </div>
+    <button class="map-btn" onclick="revealMapAnswers(this)">Show Answers</button>`;
+  // Timeline (right)
+  const displayOrder=shuffle([...eB.events]);
+  const sortedB=[...eB.events].sort((a,b)=>a.year-b.year);
+  b.innerHTML=`
+    <div class="ptitle" style="color:#888;text-transform:uppercase;letter-spacing:.1em">Timeline Puzzle 📅</div>
+    <div class="ptitle" style="font-size:clamp(0.9rem,2.2vh,1.5rem)!important">${eB.title}</div>
+    <div id="tl-instr" class="tl-instr">Put in order — oldest first. Write 1–5 beside each.</div>
+    <div id="tl-events" class="tl-events" style="width:100%">
+      ${displayOrder.map((ev,i)=>`<div class="tl-event"><div class="tl-event-num">${String.fromCharCode(65+i)}</div><div class="tl-event-text">${ev.text}</div></div>`).join('')}
+    </div>
+    <div id="tl-sorted" style="display:none;width:100%">
+      ${sortedB.map((ev,i)=>`<div class="tl-sorted-item"><span class="tl-year">${ev.year<0?Math.abs(ev.year)+' BC':ev.year+' AD'}</span>${ev.text}</div>`).join('')}
+    </div>
+    <button class="tl-btn" onclick="revealTimeline(this)">Reveal Order</button>`;
+}
+
+// ═══════════════════════════════════════════════════════════
 // SOLUTIONS
 // ═══════════════════════════════════════════════════════════
 function toggleSols(){
@@ -1735,7 +2007,11 @@ function toggleSols(){
   const t=document.getElementById('sol-title'),c=document.getElementById('sol-content');
   if(cur.type==='boggle'){
     t.textContent=`Boggle — ${cur.word}`;
-    c.innerHTML=`<div class="sol-words">${[...cur.sols].sort((a,b)=>a.length-b.length||a.localeCompare(b)).map(w=>`<span class="sol-w">${w}</span>`).join('')}</div>`;
+    const grouped={};
+    [...cur.sols].sort((a,b)=>a.localeCompare(b)).forEach(w=>{const l=w.length;if(l>=2&&l<=9){if(!grouped[l])grouped[l]=[];grouped[l].push(w);}});
+    c.innerHTML=Object.keys(grouped).sort((a,b)=>a-b).map(l=>`
+      <div style="margin-bottom:6px"><span style="font-size:0.78rem;font-weight:900;color:#888;text-transform:uppercase;letter-spacing:0.07em">${l} letters</span>
+      <div class="sol-words" style="margin-top:3px">${grouped[l].map(w=>`<span class="sol-w">${w}</span>`).join('')}</div></div>`).join('');
   } else if(cur.type==='number'){
     t.textContent='Number puzzle — solutions';
     const cols=[{lbl:'2 Numbers',items:cur.targets.two.map(t=>solveNum(cur.grid,t,2))},{lbl:'3 Numbers',items:cur.targets.three.map(t=>solveNum(cur.grid,t,3))},{lbl:'4 Numbers',items:cur.targets.four.map(t=>solveNum(cur.grid,t,4))}];
@@ -1794,6 +2070,38 @@ function toggleSols(){
     c.innerHTML=`<p style="font-size:0.88rem;margin-bottom:6px"><b>Option A:</b> ${e.optA}<br><span style="color:#3A9922">${e.workingA}</span></p>
       <p style="font-size:0.88rem;margin-bottom:6px"><b>Option B:</b> ${e.optB}<br><span style="color:#3A9922">${e.workingB}</span></p>
       <p style="font-size:0.95rem;font-weight:800;color:#1798d3;border-top:2px solid #EEE;padding-top:8px;margin-top:4px">${e.answer}</p>`;
+  } else if(cur.type==='literacy'){
+    t.textContent='Literacy — Word of the Day + Spot the Mistake';
+    c.innerHTML=`<p style="font-weight:800;margin-bottom:4px">Word of the Day: ${cur.dataA.word}</p>
+      <p style="font-size:0.9rem;margin-bottom:12px;line-height:1.8"><b>Class:</b> ${cur.dataA.cls} — ${cur.dataA.def}<br><b>Example:</b> "${cur.dataA.example}"</p>
+      <p style="font-weight:800;margin-bottom:4px">Spot the Mistake — ${cur.dataB.count} errors</p>
+      ${cur.dataB.errors.map((er,i)=>`<p style="font-size:0.88rem;margin-bottom:6px;line-height:1.6"><b>${i+1}.</b> "${er.wrong}" → "${er.correct}"<br><span style="color:#555">${er.exp}</span></p>`).join('')}`;
+  } else if(cur.type==='vocab'){
+    t.textContent='Vocab — Word of the Day + Synonyms & Antonyms';
+    c.innerHTML=`<p style="font-weight:800;margin-bottom:4px">Word of the Day: ${cur.dataA.word}</p>
+      <p style="font-size:0.9rem;margin-bottom:12px;line-height:1.8">${cur.dataA.def}<br>"${cur.dataA.example}"</p>
+      <p style="font-weight:800;margin-bottom:4px">Synonyms & Antonyms — ${cur.dataB.word}</p>
+      <p style="font-size:0.9rem;line-height:1.8"><b>Synonyms:</b> ${cur.dataB.syns.join(', ')}<br><b>Antonyms:</b> ${cur.dataB.ants.join(', ')}</p>`;
+  } else if(cur.type==='mathsreason'){
+    t.textContent='Maths Reasoning — Magic Number + Would You Rather';
+    c.innerHTML=`<p style="font-weight:800;margin-bottom:4px">Magic Number: <span style="font-size:1.6rem;color:#1798d3">${cur.dataA.answer}</span></p>
+      <p style="font-size:0.88rem;margin-bottom:12px">Clues: ${cur.dataA.clues.join(' / ')}</p>
+      <p style="font-weight:800;margin-bottom:4px">Would You Rather</p>
+      <p style="font-size:0.88rem;margin-bottom:4px;line-height:1.8"><b>A:</b> ${cur.dataB.workingA}<br><b>B:</b> ${cur.dataB.workingB}</p>
+      <p style="font-size:0.95rem;font-weight:800;color:#1798d3">${cur.dataB.answer}</p>`;
+  } else if(cur.type==='mathsshape'){
+    t.textContent='Maths — Shape of the Day + Estimation';
+    c.innerHTML=`<p style="font-weight:800;margin-bottom:4px">Shape: ${cur.dataA.name}</p>
+      <p style="font-size:0.88rem;margin-bottom:12px;line-height:1.8">${cur.dataA.properties.map((p,i)=>cur.dataA.questions[i]+': '+p).join('<br>')}</p>
+      <p style="font-weight:800;margin-bottom:4px">Estimation Answer</p>
+      <p style="font-size:0.95rem;font-weight:800;color:#1798d3">${cur.dataB.answer}</p>
+      <p style="font-size:0.88rem">${cur.dataB.explanation}</p>`;
+  } else if(cur.type==='humanities'){
+    t.textContent='Humanities — Map Challenge + Timeline';
+    c.innerHTML=`<p style="font-weight:800;margin-bottom:4px">Map: ${cur.dataA.country}</p>
+      <p style="font-size:0.88rem;margin-bottom:12px;line-height:1.8">${cur.dataA.answers.map((a,i)=>cur.dataA.questions[i]+': '+a).join('<br>')}</p>
+      <p style="font-weight:800;margin-bottom:4px">Timeline: ${cur.dataB.title}</p>
+      <p style="font-size:0.88rem;line-height:1.8">${[...cur.dataB.events].sort((a,b)=>a.year-b.year).map((ev,i)=>`${i+1}. ${ev.year<0?Math.abs(ev.year)+' BC':ev.year+' AD'} — ${ev.text}`).join('<br>')}</p>`;
   }
   document.getElementById('sol-ov').classList.add('on');
   document.getElementById('solbtn').textContent='Hide solutions';solsOpen=true;
