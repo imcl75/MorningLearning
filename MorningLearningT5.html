@@ -119,6 +119,88 @@ html,body{width:100vw;height:100vh;overflow:hidden;background:#fff;font-family:'
 .sol-words{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 .sol-w{background:#E8F8EE;border:1px solid #A9DFBF;padding:3px 9px;border-radius:4px;font-size:0.9rem;font-weight:600;color:#145A32}
 
+/* ── SPOT THE MISTAKE ──────────────────────────────────── */
+.stm-para{background:#FFF8E7;border:2.5px solid #F0C040;border-radius:9px;padding:1.2vh 1.4vw;font-size:clamp(1.1rem,2.8vh,1.9rem);font-weight:600;line-height:1.7;color:#111;margin-bottom:1vh}
+.stm-count{font-size:clamp(1rem,2.4vh,1.6rem);font-weight:700;color:#555;text-align:center;margin-bottom:1vh}
+.stm-btn{padding:0.5em 1.4em;background:#1798d3;color:#fff;border:none;border-radius:7px;font-family:'Nunito',sans-serif;font-size:clamp(0.9rem,2vh,1.3rem);font-weight:800;cursor:pointer}
+.stm-btn:hover{background:#1280b8}
+.stm-err{background:#FFDDDD;border-radius:4px;padding:0 3px;text-decoration:underline wavy #E03030}
+.stm-ans-list{margin-top:1.2vh;font-size:clamp(0.85rem,1.9vh,1.25rem);line-height:1.9;color:#333}
+.stm-ans-item{margin-bottom:0.3vh}
+.stm-ans-item b{color:#E03030}
+
+/* ── WORD OF THE DAY ───────────────────────────────────── */
+.wod-word{font-size:clamp(2.2rem,7vh,5rem);font-weight:900;color:#1798d3;text-align:center;letter-spacing:0.02em;line-height:1}
+.wod-class{font-size:clamp(0.85rem,2vh,1.3rem);font-weight:800;color:#fff;background:#555;border-radius:20px;padding:0.15em 0.8em;display:inline-block;margin:0.5vh auto 0.8vh;text-align:center}
+.wod-def{font-size:clamp(1rem,2.5vh,1.7rem);font-weight:700;color:#333;text-align:center;line-height:1.4;margin-bottom:0.6vh}
+.wod-example{font-size:clamp(0.85rem,2vh,1.35rem);color:#666;font-style:italic;text-align:center;margin-bottom:0.5vh;line-height:1.4}
+.wod-etymology{font-size:clamp(0.78rem,1.7vh,1.15rem);color:#888;text-align:center;margin-bottom:1vh;line-height:1.4}
+.wod-qs{background:#F0F8FF;border:2px solid #AED6F1;border-radius:8px;padding:0.8vh 1vw;font-size:clamp(0.85rem,1.9vh,1.3rem);font-weight:700;color:#1A5276;line-height:1.9}
+
+/* ── SYNONYM & ANTONYM ─────────────────────────────────── */
+.sna-word{font-size:clamp(2rem,6vh,4.2rem);font-weight:900;color:#111;text-align:center;margin-bottom:0.8vh}
+.sna-cols{display:grid;grid-template-columns:1fr 1fr;gap:1vw;width:100%}
+.sna-col-hdr{font-size:clamp(0.9rem,2.2vh,1.5rem);font-weight:900;text-align:center;padding:0.3em;border-radius:6px 6px 0 0;color:#fff}
+.sna-col-hdr.syn{background:#3A9922}
+.sna-col-hdr.ant{background:#E03030}
+.sna-col-body{border:2px solid #DDD;border-top:none;border-radius:0 0 6px 6px;padding:0.5vh 0.6vw;min-height:10vh;font-size:clamp(0.85rem,2vh,1.3rem);font-weight:700;color:#333;line-height:1.9;text-align:center}
+.sna-instr{font-size:clamp(0.8rem,1.8vh,1.2rem);color:#AAA;font-style:italic;font-weight:700;text-align:center;margin-bottom:0.5vh}
+.sna-btn{padding:0.45em 1.2em;background:#1798d3;color:#fff;border:none;border-radius:7px;font-family:'Nunito',sans-serif;font-size:clamp(0.85rem,1.9vh,1.25rem);font-weight:800;cursor:pointer}
+.sna-btn:hover{background:#1280b8}
+
+/* ── MAGIC NUMBER ──────────────────────────────────────── */
+.mn-clues{width:100%;display:flex;flex-direction:column;gap:0.5vh}
+.mn-clue{display:flex;align-items:center;gap:0.7vw;padding:0.55vh 0.8vw;border:2px solid #E8E8E8;border-radius:7px;font-size:clamp(0.95rem,2.3vh,1.55rem);font-weight:700;color:#333}
+.mn-clue-num{min-width:clamp(24px,3.5vh,36px);height:clamp(24px,3.5vh,36px);border-radius:50%;background:#1798d3;color:#fff;font-size:clamp(0.75rem,1.7vh,1.1rem);font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mn-answer{font-size:clamp(3rem,9vh,6rem);font-weight:900;color:#1798d3;text-align:center;display:none}
+.mn-btn{padding:0.5em 1.4em;background:#1798d3;color:#fff;border:none;border-radius:7px;font-family:'Nunito',sans-serif;font-size:clamp(0.9rem,2vh,1.3rem);font-weight:800;cursor:pointer;margin-top:1vh}
+.mn-btn:hover{background:#1280b8}
+
+/* ── SHAPE OF THE DAY ──────────────────────────────────── */
+.shp-name{font-size:clamp(2rem,6.5vh,4.5rem);font-weight:900;color:#111;text-align:center;margin-bottom:0.5vh}
+.shp-type{font-size:clamp(0.85rem,2vh,1.3rem);font-weight:800;color:#fff;background:#1798d3;border-radius:20px;padding:0.15em 0.9em;display:inline-block;margin-bottom:1vh}
+.shp-qs{display:flex;flex-direction:column;gap:0.5vh;width:100%;margin-bottom:1vh}
+.shp-q{padding:0.5vh 0.8vw;background:#F8F8F8;border:1.5px solid #E0E0E0;border-radius:6px;font-size:clamp(0.88rem,2vh,1.35rem);font-weight:700;color:#444;line-height:1.4}
+.shp-btn{padding:0.45em 1.2em;background:#1798d3;color:#fff;border:none;border-radius:7px;font-family:'Nunito',sans-serif;font-size:clamp(0.85rem,1.9vh,1.25rem);font-weight:800;cursor:pointer}
+.shp-btn:hover{background:#1280b8}
+.shp-props{display:none;width:100%;background:#EBF5FB;border:2px solid #AED6F1;border-radius:8px;padding:0.8vh 1vw;font-size:clamp(0.85rem,1.9vh,1.3rem);font-weight:700;color:#1A5276;line-height:1.9;margin-top:0.5vh}
+
+/* ── ESTIMATION STATION ────────────────────────────────── */
+.est-q{background:#FFF0E0;border:2.5px solid #F0A050;border-radius:9px;padding:1.2vh 1.4vw;font-size:clamp(1.2rem,3.2vh,2.2rem);font-weight:800;color:#111;text-align:center;line-height:1.5;margin-bottom:1vh}
+.est-instr{font-size:clamp(0.9rem,2.1vh,1.4rem);font-weight:700;color:#777;text-align:center;margin-bottom:1vh}
+.est-btn{padding:0.5em 1.4em;background:#1798d3;color:#fff;border:none;border-radius:7px;font-family:'Nunito',sans-serif;font-size:clamp(0.9rem,2vh,1.3rem);font-weight:800;cursor:pointer}
+.est-btn:hover{background:#1280b8}
+.est-ans{display:none;margin-top:1vh;background:#E8F8EE;border:2px solid #A9DFBF;border-radius:8px;padding:1vh 1.2vw;font-size:clamp(1rem,2.5vh,1.7rem);font-weight:800;color:#145A32;text-align:center;line-height:1.5}
+
+/* ── MAP CHALLENGE ─────────────────────────────────────── */
+.map-country{font-size:clamp(2rem,6vh,4rem);font-weight:900;color:#111;text-align:center;margin-bottom:0.6vh}
+.map-facts{background:#F0FFF0;border:2px solid #A9DFBF;border-radius:8px;padding:0.8vh 1vw;margin-bottom:0.8vh;font-size:clamp(0.88rem,2vh,1.35rem);font-weight:700;color:#145A32;line-height:1.9}
+.map-qs{font-size:clamp(0.88rem,2vh,1.35rem);font-weight:700;color:#333;line-height:2;margin-bottom:0.8vh}
+.map-btn{padding:0.45em 1.2em;background:#1798d3;color:#fff;border:none;border-radius:7px;font-family:'Nunito',sans-serif;font-size:clamp(0.85rem,1.9vh,1.25rem);font-weight:800;cursor:pointer}
+.map-btn:hover{background:#1280b8}
+.map-ans{display:none;background:#EBF5FB;border:2px solid #AED6F1;border-radius:8px;padding:0.8vh 1vw;font-size:clamp(0.88rem,2vh,1.35rem);font-weight:800;color:#1A5276;line-height:1.9;margin-top:0.5vh}
+
+/* ── TIMELINE PUZZLE ───────────────────────────────────── */
+.tl-instr{font-size:clamp(0.9rem,2.1vh,1.4rem);font-weight:700;color:#666;text-align:center;margin-bottom:0.8vh}
+.tl-events{display:flex;flex-direction:column;gap:0.5vh;width:100%;margin-bottom:0.8vh}
+.tl-event{display:flex;align-items:center;gap:0.8vw;padding:0.55vh 0.8vw;border:2px solid #E8E8E8;border-radius:7px;background:#FAFAFA}
+.tl-event-num{min-width:clamp(24px,3.5vh,36px);height:clamp(24px,3.5vh,36px);border-radius:50%;background:#FAD7A0;border:2px solid #F0A500;color:#784212;font-size:clamp(0.75rem,1.7vh,1.1rem);font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tl-event-text{font-size:clamp(0.9rem,2.1vh,1.4rem);font-weight:700;color:#333;line-height:1.3}
+.tl-btn{padding:0.45em 1.2em;background:#1798d3;color:#fff;border:none;border-radius:7px;font-family:'Nunito',sans-serif;font-size:clamp(0.85rem,1.9vh,1.25rem);font-weight:800;cursor:pointer}
+.tl-btn:hover{background:#1280b8}
+.tl-sorted{display:none;width:100%;margin-top:0.5vh;display:none}
+.tl-sorted-item{display:flex;align-items:center;gap:0.8vw;padding:0.45vh 0.8vw;border-left:4px solid #1798d3;margin-bottom:0.35vh;font-size:clamp(0.85rem,1.9vh,1.3rem);font-weight:700;color:#111}
+.tl-year{min-width:4em;font-weight:900;color:#1798d3}
+
+/* ── WOULD YOU RATHER ──────────────────────────────────── */
+.wyr-q{font-size:clamp(1.1rem,3vh,2rem);font-weight:800;color:#111;text-align:center;line-height:1.4;margin-bottom:0.8vh}
+.wyr-opts{display:grid;grid-template-columns:1fr auto 1fr;gap:0.8vw;align-items:center;margin-bottom:1vh;width:100%}
+.wyr-opt{background:#F8F8F8;border:2.5px solid #DDD;border-radius:9px;padding:0.8vh 0.8vw;font-size:clamp(0.9rem,2.2vh,1.5rem);font-weight:800;color:#333;text-align:center;line-height:1.4}
+.wyr-or{font-size:clamp(1rem,2.5vh,1.7rem);font-weight:900;color:#1798d3;text-align:center}
+.wyr-btn{padding:0.5em 1.4em;background:#1798d3;color:#fff;border:none;border-radius:7px;font-family:'Nunito',sans-serif;font-size:clamp(0.9rem,2vh,1.3rem);font-weight:800;cursor:pointer}
+.wyr-btn:hover{background:#1280b8}
+.wyr-working{display:none;margin-top:1vh;width:100%;background:#EBF5FB;border:2px solid #AED6F1;border-radius:9px;padding:1vh 1.2vw;font-size:clamp(0.88rem,2vh,1.35rem);font-weight:700;color:#1A5276;line-height:1.9}
+
 /* TWO TRUTHS EDITOR */
 .tt-bank-item{border:1.5px solid #EEE;border-radius:8px;padding:10px 14px;margin-bottom:8px;position:relative}
 .tt-bank-topic{font-size:0.8rem;font-weight:800;color:#1798d3;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em}
@@ -714,6 +796,296 @@ const DEFAULT_TT=[
 ];
 
 // ═══════════════════════════════════════════════════════════
+// SPOT THE MISTAKE BANK
+// Each entry: {para, count, errors:[{wrong, correct, explanation}]}
+// The paragraph uses |wrong| markers — displayed as-is, revealed on Show Answers
+// ═══════════════════════════════════════════════════════════
+const SPOT_MISTAKE=[
+  {para:"Last weekend, my family went too the zoo. We saw lions, tigers and bears — their was even a baby elephant! I could not believe how big it's ears were. Me and my sister wanted to stay all day, but dad said we had to go home for tea.",count:4,errors:[{wrong:"too the zoo",correct:"to the zoo",exp:"'Too' means 'as well' or 'excessively'. The correct word here is 'to'."},  {wrong:"their was",correct:"there was",exp:"'Their' shows belonging. 'There was' is the correct phrase for a place/existence."},{wrong:"it's ears",correct:"its ears",exp:"'It's' means 'it is'. 'Its' (no apostrophe) shows belonging."},{wrong:"Me and my sister",correct:"My sister and I",exp:"When talking about yourself and someone else, put the other person first and use 'I', not 'me'."}]},
+  {para:"The ancient egyptians built huge pyramids to bury there pharaohs. The pyramids took thousands of years to build and required alot of workers. Scientists have discovered that the workers was treated well and given food and medicine. It is one of the most amazing achievments in history.",count:4,errors:[{wrong:"ancient egyptians",correct:"ancient Egyptians",exp:"'Egyptians' is a proper noun (name of a people) and needs a capital letter."},{wrong:"bury there pharaohs",correct:"bury their pharaohs",exp:"'There' refers to a place. 'Their' shows belonging."},{wrong:"alot",correct:"a lot",exp:"'Alot' is not a word — 'a lot' is always written as two separate words."},{wrong:"the workers was",correct:"the workers were",exp:"'Workers' is plural, so the verb must be 'were', not 'was'."}]},
+  {para:"On Saturday, Jake and his friends decided to go for a bike ride. They cycled too the park and then along the river. Jake's bike had a puncture, so he couldn't of carried on without help. Luckily, his friend Tom brung a puncture repair kit.",count:3,errors:[{wrong:"cycled too the park",correct:"cycled to the park",exp:"'Too' means 'also' or 'excessively'. The correct word here is 'to'."},{wrong:"couldn't of",correct:"couldn't have",exp:"'Of' is never used after a modal verb. You hear 'could've' (could have) and mistake it for 'of'."},{wrong:"brung",correct:"brought",exp:"'Brung' is not a standard English word. The past tense of 'bring' is 'brought'."}]},
+  {para:"Space is an incredible place. there are billions of stars in our galaxy alone, and scientists believe there are even more galaxy's beyond our own. The sun is a medium-sized star — it is not as big as people often think. One day, humans might travel too other planets to live.",count:3,errors:[{wrong:"there are billions",correct:"There are billions",exp:"A sentence must begin with a capital letter."},{wrong:"galaxy's",correct:"galaxies",exp:"'Galaxy's' uses an apostrophe, which shows possession. To make a plural, add 'ies' (galaxies)."},{wrong:"travel too other planets",correct:"travel to other planets",exp:"'Too' means 'also' or 'excessively'. The correct word here is 'to'."}]},
+  {para:"The football match was the most exciting game of the season. Both teams played brilliantly but it was City who scored the winning goal in the final minute. The croud went wild! Everybody was cheering and waving they're scarves in the air. It was a day nobody would never forget.",count:3,errors:[{wrong:"croud",correct:"crowd",exp:"Misspelling: the correct spelling is 'crowd'."},{wrong:"they're scarves",correct:"their scarves",exp:"'They're' means 'they are'. 'Their' shows belonging — it is the correct word here."},{wrong:"would never forget",correct:"would ever forget",exp:"'Would never forget' is a double negative with 'nobody'. Correct: 'nobody would ever forget'."}]},
+  {para:"My nan makes the most delicious cakes in the world. Last sunday she baked a huge chocolate cake for my birthday. The recipe used flower, eggs, butter and sugar. Me and my brother ate three slices each — we couldn't stop ourselfs! I hope she make it again next year.",count:4,errors:[{wrong:"Last sunday",correct:"Last Sunday",exp:"Days of the week are proper nouns and always need a capital letter."},{wrong:"used flower",correct:"used flour",exp:"'Flower' is a plant. 'Flour' is the baking ingredient."},{wrong:"Me and my brother",correct:"My brother and I",exp:"Put the other person first and use 'I' when it is the subject of the sentence."},{wrong:"she make it",correct:"she makes it",exp:"The subject 'she' requires 'makes' (third person singular present tense)."}]},
+  {para:"Wolves are fascinating animals. They live in packs and work together to hunt their pray. The leader of the pack is called the alpha wolf. Wolfs communicate using howls, growls and body language. A wolf's howl can be herd from up to ten kilometres away.",count:3,errors:[{wrong:"hunt their pray",correct:"hunt their prey",exp:"'Pray' means to speak to a god. 'Prey' is an animal hunted for food."},{wrong:"Wolfs",correct:"Wolves",exp:"The plural of 'wolf' is 'wolves' — words ending in 'f' often change to 'ves' in the plural."},{wrong:"can be herd",correct:"can be heard",exp:"'Herd' is a group of animals. 'Heard' is the past tense of 'hear'."}]},
+  {para:"The rainforest is home to more then half of all the world's species. It is found near the equater, where it is hot and wet all year round. Every year, huge areas of rainforest is being destroyed by humans. Scientists say that if we dont act now, many animals will become extinct.",count:4,errors:[{wrong:"more then half",correct:"more than half",exp:"'Then' relates to time. 'Than' is used in comparisons."},{wrong:"the equater",correct:"the equator",exp:"Misspelling: the correct spelling is 'equator'."},{wrong:"huge areas of rainforest is",correct:"huge areas of rainforest are",exp:"'Areas' is plural so the verb should be 'are', not 'is'."},{wrong:"if we dont",correct:"if we don't",exp:"'Dont' is missing its apostrophe. It should be 'don't' (short for 'do not')."}]},
+  {para:"Yesterday, our class went on a trip to a local farm. We seed lots of animals including cows, sheep and chickens. The farmer told us that cows produce milk witch is used to make cheese and butter. It was a really educational day and everyone enjoyed theirselves.",count:3,errors:[{wrong:"We seed lots",correct:"We saw lots",exp:"'Seed' is not a past tense verb here. 'Saw' is the past tense of 'see'."},{wrong:"milk witch",correct:"milk which",exp:"'Witch' is a magical person. 'Which' is the relative pronoun needed here."},{wrong:"enjoyed theirselves",correct:"enjoyed themselves",exp:"'Theirselves' is not a word. The correct reflexive pronoun is 'themselves'."}]},
+  {para:"Mount everest is the highest mountain in the world. It is located in the himalayas on the border between Nepal and Tibet. The first people to reach the summit was Edmund Hillary and Tenzing Norgay in 1953. Climbing Everest is extremly dangerous due to the freezing temperatures and lack of oxygen.",count:4,errors:[{wrong:"Mount everest",correct:"Mount Everest",exp:"'Everest' is a proper noun (name of a specific place) and needs a capital letter."},{wrong:"the himalayas",correct:"the Himalayas",exp:"'Himalayas' is a proper noun (name of a mountain range) and needs a capital letter."},{wrong:"The first people to reach the summit was",correct:"The first people to reach the summit were",exp:"'People' is plural so the verb must be 'were', not 'was'."},{wrong:"extremly",correct:"extremely",exp:"Misspelling: the correct spelling is 'extremely'."}]},
+  {para:"My favourite book is about a young girl who discovers she has magical powers. In the story, she have to defeat an evil sorcerer who wants to take over the kingdom. The girl's friends help's her on her journey. At the end, good triumphs over evil and everyone lives hapily ever after.",count:3,errors:[{wrong:"she have to defeat",correct:"she has to defeat",exp:"The subject 'she' is third person singular — the correct verb form is 'has'."},{wrong:"friend's help's her",correct:"friends help her",exp:"'Friends' needs no apostrophe (it is a simple plural). 'Helps' only needs an apostrophe if showing possession — here it is just a verb."},{wrong:"lives hapily",correct:"lives happily",exp:"Misspelling: the correct spelling is 'happily' (double 'p', then '-ily')."}]},
+  {para:"Penguins are fascinating creatures that live in the southern hemisphere. Contrary to popular belief, not all penguins live in Antartica — some species are found in warmer climates. Penguins cannot fly but they're flippers make them excellent swimmers. A group of penguins on land is called a waddle.",count:3,errors:[{wrong:"in Antartica",correct:"in Antarctica",exp:"Misspelling: the correct spelling is 'Antarctica'."},{wrong:"they're flippers",correct:"their flippers",exp:"'They're' means 'they are'. 'Their' shows belonging and is correct here."},{wrong:"A group of penguins on land is called a waddle",correct:"A group of penguins on land is called a waddle — correct!",exp:"Actually 'waddle' IS correct — this is not a mistake! (It is also called a 'rookery' or 'colony'.) Check your other answers again."}]},
+  {para:"Last summer, our family traveled to france for our holiday. We visited Paris and saw the eifel tower, which was even more impressive in real life than in photos. My mum said it was builded in 1889 for a world exhibition. We also ate croissants everyday for breakfast — they was delicious!",count:5,errors:[{wrong:"traveled to france",correct:"travelled to France",exp:"'France' is a proper noun needing a capital. Also, British English uses 'travelled' (double 'l')."},{wrong:"the eifel tower",correct:"the Eiffel Tower",exp:"'Eiffel Tower' is a proper noun and needs capital letters. Also the correct spelling is 'Eiffel'."},{wrong:"it was builded",correct:"it was built",exp:"'Builded' is not a word. The irregular past tense of 'build' is 'built'."},{wrong:"ate croissants everyday",correct:"ate croissants every day",exp:"'Everyday' (one word) is an adjective meaning 'ordinary'. 'Every day' (two words) means 'each day'."},{wrong:"they was delicious",correct:"they were delicious",exp:"'They' is plural so the correct verb is 'were', not 'was'."}]},
+  {para:"Did you know that bees are one of the most important insects on earth? Without bees, many plants couldn't reproduce because they rely on bees for pollination. Sadly, bee populations is declining around the world due to habitat loss and pesticides. We all need to do are part to protect them.",count:3,errors:[{wrong:"insects on earth",correct:"insects on Earth",exp:"'Earth' (our planet) is a proper noun and needs a capital letter."},{wrong:"bee populations is declining",correct:"bee populations are declining",exp:"'Populations' is plural so the verb must be 'are', not 'is'."},{wrong:"do are part",correct:"do our part",exp:"'Are' is a verb. The possessive pronoun needed here is 'our'."}]},
+  {para:"The great fire of london started on the 2nd of September 1666 in a bakery on pudding Lane. It spreaded quickly because many of the buildings were made of wood. The fire destroyed over 13,000 houses and 87 churches. Amazingly, very few people actually died, but thousands became homeless. The fire lead to new building regulations in London.",count:4,errors:[{wrong:"The great fire of london",correct:"The Great Fire of London",exp:"'Great Fire of London' is a proper noun (name of a specific historical event and place) — all key words need capitals."},{wrong:"on pudding Lane",correct:"on Pudding Lane",exp:"'Pudding Lane' is a proper noun (name of a specific street) and needs capital letters."},{wrong:"It spreaded quickly",correct:"It spread quickly",exp:"'Spreaded' is not a word. The past tense of 'spread' is 'spread' (no change)."},{wrong:"The fire lead to",correct:"The fire led to",exp:"'Lead' (present tense / the metal) is different from 'led' (past tense of 'lead' as in 'to lead')."}]},
+
+  {para:"The Anglo-Saxon's arrived in Britain after the Romans left in 410 AD. They came from what is now germany, denmark and the netherlands. The saxons settled across the country, whether they were farmers or warriors. Over time, they set up seven kingdoms, each with their own king's and laws.",count:4,errors:[{wrong:"Anglo-Saxon's arrived",correct:"Anglo-Saxons arrived",exp:"'Anglo-Saxons' is just a plural here — no apostrophe is needed. An apostrophe would show possession (the Anglo-Saxons' village)."},{wrong:"germany, denmark and the netherlands",correct:"Germany, Denmark and the Netherlands",exp:"These are proper nouns (names of countries) and always need capital letters."},{wrong:"whether they were farmers",correct:"whether they were farmers — actually this could be correct depending on context, BUT here 'whether' is fine. Check your other answers.",exp:"Trick question — 'whether' is correct here. Don't let it distract you from the real mistakes!"},{wrong:"their own king's",correct:"their own kings",exp:"'Kings' here is just a plural (more than one king) — no apostrophe needed. For possession it would be 'the kings' laws'."}]},
+
+  {para:"In science, we have been learning about sound. Sound is created when objects vibrate, which causes particles in the air to move. The faster the vibrations, the higher the pitch of the sound. You're ears detect these vibrations when they reach your ear drum. Loud sounds have larger vibrations then quiet ones.",count:3,errors:[{wrong:"You're ears",correct:"Your ears",exp:"'You're' means 'you are'. 'Your' shows belonging — it is the correct word here."},{wrong:"larger vibrations then quiet",correct:"larger vibrations than quiet",exp:"'Then' relates to time or sequence. 'Than' is used in comparisons."},{wrong:"Your ear drum",correct:"your eardrum — no error here, check again",exp:"Actually this is not an error — look more carefully at the other parts of the sentence."}]},
+
+  {para:"Last term, our class studdied the Anglo-Saxons. We found out that Alfred the Great was one of the most important rulers in english history. He defended his kingdom against the vikings and helped create a system of laws. The childrens books we read were full of fascinating facts about life in saxon villages.",count:4,errors:[{wrong:"studdied",correct:"studied",exp:"Misspelling: the correct spelling is 'studied'. The root word is 'study' — drop the 'y' and add '-ied'."},{wrong:"english history",correct:"English history",exp:"'English' is a proper adjective (relating to England) and needs a capital letter."},{wrong:"the vikings",correct:"the Vikings",exp:"'Vikings' is a proper noun (name of a specific group of people) and needs a capital letter."},{wrong:"The childrens books",correct:"The children's books",exp:"'Children's' needs an apostrophe before the 's' to show that the books belong to the children. 'Children' is already plural, so it's children's (not childrens')."}]},
+
+  {para:"Brazil is a fasinating country in South America. It is home to the amazon rainforest, witch covers more than half of the country. The forests plants and animals are incredibly diverse. Scientists are worried, however that deforestation is destroying these habitats at an alarming rate.",count:4,errors:[{wrong:"fasinating",correct:"fascinating",exp:"Misspelling: the correct spelling is 'fascinating'."},{wrong:"the amazon rainforest",correct:"the Amazon rainforest",exp:"'Amazon' is a proper noun (name of a specific river/region) and needs a capital letter."},{wrong:"witch covers",correct:"which covers",exp:"'Witch' is a magical person. 'Which' is the relative pronoun needed here."},{wrong:"however that deforestation",correct:"however, that deforestation",exp:"A comma is needed after 'however' to demarcate the fronted adverbial/connective from the rest of the clause."}]},
+
+  {para:"The pupils bags were left scattered across the classroom floor. The teachers were not happy because the schools rules were very clear about keeping the corridors tidy. Despite the warnings however the childrens coats were also left on the floor rather than hung on the pegs.",count:4,errors:[{wrong:"The pupils bags",correct:"The pupils' bags",exp:"'Pupils' is already plural, so the apostrophe goes AFTER the s to show belonging: pupils' bags."},{wrong:"the schools rules",correct:"the school's rules",exp:"The rules belong to the school (singular), so the apostrophe goes before the s: school's rules."},{wrong:"warnings however the",correct:"warnings, however, the",exp:"'However' used in the middle of a sentence needs commas on both sides to demarcate the clause."},{wrong:"the childrens coats",correct:"the children's coats",exp:"'Children' is already an irregular plural (no 's'), so the apostrophe goes before the 's': children's coats."}]},
+
+  {para:"We learnt in science that vertebrates are animals with a backbone. Fish, amphibians, reptiles, birds and mammals are all vertebrates — accept insects, spiders and worms, which are invertebrates. Mammals are warm-blooded and give birth to live young; birds however lay eggs and are covered in feathers.",count:2,errors:[{wrong:"accept insects",correct:"except insects",exp:"'Accept' means to receive or agree to something. 'Except' means 'not including' — that is the correct word here."},{wrong:"birds however lay",correct:"birds, however, lay",exp:"'However' used in the middle of a sentence needs commas on both sides to demarcate it from the surrounding clauses."}]}
+];
+
+// ═══════════════════════════════════════════════════════════
+// WORD OF THE DAY BANK
+// ═══════════════════════════════════════════════════════════
+const WORD_OF_DAY=[
+  {word:'ambitious',cls:'adjective',def:'Having a strong desire to succeed or achieve something great.',example:'She was ambitious and dreamed of becoming a scientist one day.',origin:"From Latin 'ambitio' meaning 'going around' (to canvass for votes)."},
+  {word:'peculiar',cls:'adjective',def:'Strange or unusual in a way that is hard to explain.',example:'There was a peculiar smell coming from the science lab.',origin:"From Latin 'peculiaris' meaning 'of one's own private property' — something set apart."},
+  {word:'ferocious',cls:'adjective',def:'Savagely fierce, violent or intense.',example:'The ferocious lion roared and the crowd gasped.',origin:"From Latin 'ferox' meaning 'fierce' or 'wild'."},
+  {word:'catastrophe',cls:'noun',def:'A sudden disaster or terrible event that causes great suffering.',example:'The flood was a catastrophe for the whole village.',origin:"From Greek 'katastrophē' meaning 'overturning' or 'sudden end'."},
+  {word:'tenacious',cls:'adjective',def:'Holding on to something firmly; not giving up easily.',example:'The tenacious climber refused to stop until she reached the top.',origin:"From Latin 'tenax' meaning 'holding fast', from 'tenere' — to hold."},
+  {word:'dilemma',cls:'noun',def:'A situation where you have to choose between two difficult options.',example:'He faced a dilemma: should he tell the truth or protect his friend?',origin:"From Greek 'di' (two) + 'lemma' (assumption) — a double problem."},
+  {word:'eloquent',cls:'adjective',def:'Able to use language in a clear, powerful and persuasive way.',example:'The eloquent speaker had the whole audience listening intently.',origin:"From Latin 'eloqui' meaning 'to speak out'."},
+  {word:'bewildered',cls:'adjective',def:'Completely confused and unable to understand what is happening.',example:'The new pupil looked bewildered by all the different rules.',origin:"Old English 'wilder' (to lead astray) with the prefix 'be-'."},
+  {word:'persevere',cls:'verb',def:'To keep trying even when something is difficult or takes a long time.',example:'Even when the puzzle was hard, she continued to persevere.',origin:"From Latin 'perseverare' meaning 'to persist', from 'severus' — strict."},
+  {word:'colossal',cls:'adjective',def:'Extremely large; enormous.',example:'A colossal wave crashed against the rocks during the storm.',origin:"From the Greek 'Kolossós' — the word used for the giant statue, the Colossus of Rhodes."},
+  {word:'abundant',cls:'adjective',def:'Existing in very large quantities; more than enough.',example:'The rainforest has abundant wildlife — it teems with life.',origin:"From Latin 'abundare' meaning 'to overflow', from 'unda' — wave."},
+  {word:'mischievous',cls:'adjective',def:'Tending to cause trouble in a playful way.',example:'The mischievous puppy had chewed through three pairs of shoes.',origin:"From Old French 'meschief' meaning 'bad outcome' or 'misfortune'."},
+  {word:'transparent',cls:'adjective',def:'Easy to see through; clear. Can also mean honest and open.',example:'The glass was so transparent you could see every fish in the tank.',origin:"From Medieval Latin 'transparere' — to show through."},
+  {word:'vibrant',cls:'adjective',def:'Full of energy and life; bright and striking.',example:'The carnival was vibrant, with music, colour and laughter everywhere.',origin:"From Latin 'vibrare' meaning 'to shake' or 'to move quickly'."},
+  {word:'collaborate',cls:'verb',def:'To work together with someone else towards a shared goal.',example:'The two scientists decided to collaborate on the experiment.',origin:"From Latin 'collaborare' — 'col' (together) + 'laborare' (to work)."},
+  {word:'exquisite',cls:'adjective',def:'Extremely beautiful and delicate; very finely made.',example:'The jeweller created an exquisite necklace out of tiny silver beads.',origin:"From Latin 'exquisitus' meaning 'carefully sought out'."},
+  {word:'turbulent',cls:'adjective',def:'Moving in an irregular, wild or violent way; full of disturbance.',example:'The pilot warned passengers to expect turbulent weather ahead.',origin:"From Latin 'turbulentus' meaning 'full of commotion', from 'turba' — crowd."},
+  {word:'empathy',cls:'noun',def:'The ability to understand and share the feelings of another person.',example:'She showed great empathy when her friend was upset.',origin:"From Greek 'empatheia' — 'em' (in) + 'pathos' (feeling)."},
+  {word:'majestic',cls:'adjective',def:'Having great beauty, power or dignity; impressive.',example:'The majestic eagle soared above the mountains.',origin:"From Latin 'maiestas' meaning 'greatness' or 'dignity'."},
+  {word:'inevitable',cls:'adjective',def:'Certain to happen; impossible to avoid.',example:'With such dark clouds, rain seemed inevitable.',origin:"From Latin 'inevitabilis' — 'in' (not) + 'evitare' (to avoid)."},
+  {word:'simultaneously',cls:'adverb',def:'At exactly the same time.',example:'The twins spoke simultaneously and said the exact same thing.',origin:"From Latin 'simul' meaning 'at the same time'."},
+  {word:'hypothesis',cls:'noun',def:'A suggested explanation for something that can be tested.',example:"The scientist wrote a hypothesis before starting the experiment.",origin:"From Greek 'hypothesis' meaning 'foundation' or 'supposition'."},
+  {word:'metamorphosis',cls:'noun',def:'A complete change in form, especially during development.',example:'The caterpillar undergoes a metamorphosis to become a butterfly.',origin:"From Greek 'metamorphoun' — 'meta' (change) + 'morphe' (form)."},
+  {word:'scrutinise',cls:'verb',def:'To look at or examine something very carefully.',example:'The detective began to scrutinise every clue at the crime scene.',origin:"From Latin 'scrutinium' — originally 'to sort through rubbish' (scrutinium = rag-picking)."},
+  {word:'exhilarating',cls:'adjective',def:'Making you feel very excited and alive; thrilling.',example:'Riding the rollercoaster was absolutely exhilarating.', origin:"From Latin 'exhilarare' meaning 'to gladden' or 'cheer up'."}
+];
+
+// ═══════════════════════════════════════════════════════════
+// SYNONYM & ANTONYM BANK
+// ═══════════════════════════════════════════════════════════
+const SYN_ANT=[
+  {word:'happy',syns:['joyful','cheerful','delighted','content','elated'],ants:['sad','miserable','gloomy','upset','unhappy']},
+  {word:'brave',syns:['courageous','bold','daring','fearless','heroic'],ants:['cowardly','afraid','timid','fearful','nervous']},
+  {word:'enormous',syns:['huge','gigantic','massive','colossal','vast'],ants:['tiny','small','miniature','minute','microscopic']},
+  {word:'fast',syns:['quick','rapid','swift','speedy','hasty'],ants:['slow','sluggish','leisurely','unhurried','gradual']},
+  {word:'kind',syns:['generous','caring','gentle','thoughtful','compassionate'],ants:['cruel','unkind','harsh','selfish','cold-hearted']},
+  {word:'difficult',syns:['hard','challenging','tricky','complex','demanding'],ants:['easy','simple','straightforward','effortless','manageable']},
+  {word:'ancient',syns:['old','historic','aged','antique','prehistoric'],ants:['modern','new','recent','contemporary','current']},
+  {word:'beautiful',syns:['gorgeous','stunning','lovely','attractive','exquisite'],ants:['ugly','hideous','unattractive','plain','dreadful']},
+  {word:'dangerous',syns:['hazardous','perilous','risky','treacherous','threatening'],ants:['safe','harmless','secure','protected','gentle']},
+  {word:'silent',syns:['quiet','hushed','noiseless','still','peaceful'],ants:['loud','noisy','deafening','rowdy','clamorous']},
+  {word:'intelligent',syns:['clever','bright','smart','gifted','brilliant'],ants:['foolish','ignorant','dim','unintelligent','simple']},
+  {word:'mysterious',syns:['puzzling','strange','cryptic','baffling','enigmatic'],ants:['obvious','clear','straightforward','plain','known']},
+  {word:'generous',syns:['giving','charitable','unselfish','kind','munificent'],ants:['mean','selfish','stingy','greedy','miserly']},
+  {word:'furious',syns:['angry','enraged','livid','irate','fuming'],ants:['calm','peaceful','content','pleased','serene']},
+  {word:'gloomy',syns:['dark','dreary','miserable','depressing','bleak'],ants:['bright','cheerful','sunny','lively','happy']},
+  {word:'triumph',syns:['victory','success','achievement','conquest','win'],ants:['defeat','failure','loss','downfall','disappointment']},
+  {word:'expand',syns:['grow','enlarge','increase','extend','widen'],ants:['shrink','reduce','decrease','contract','narrow']},
+  {word:'transparent',syns:['clear','see-through','crystal-clear','glass-like','translucent'],ants:['opaque','cloudy','murky','foggy','dark']},
+  {word:'ancient',syns:['old','historic','aged','antique','prehistoric'],ants:['modern','new','recent','contemporary','current']},
+  {word:'hesitate',syns:['pause','waver','delay','falter','dither'],ants:['decide','rush','act','leap','commit']}
+];
+
+// ═══════════════════════════════════════════════════════════
+// MAGIC NUMBER BANK
+// clues: array of strings; answer: the number
+// ═══════════════════════════════════════════════════════════
+const MAGIC_NUMBER=[
+  {clues:['I am a multiple of 4.','I am less than 50.','My digits add up to 9.','I am an even number.','I am greater than 30.'],answer:36},
+  {clues:['I am a multiple of 3.','I am between 20 and 40.','I am also a multiple of 4.','My tens digit is greater than my units digit.'],answer:24},
+  {clues:['I am a square number.','I am less than 50.','I am odd.','My digits add up to 7.'],answer:25},
+  {clues:['I am a multiple of 6.','I am less than 60.','I am greater than 40.','My units digit is 8.'],answer:48},
+  {clues:['I am a prime number.','I am greater than 10.','I am less than 20.','My digits add up to 6.'],answer:15, note:'Trick: 15 is not prime — pupils must realise. Correct answer is therefore impossible from those clues — use the version below.'},
+  {clues:['I am a prime number.','I am greater than 10.','I am less than 20.','I am odd.','My units digit is 7.'],answer:17},
+  {clues:['I am a multiple of 9.','I am a 2-digit number.','My digits add up to 9.','I am less than 50.'],answer:36},
+  {clues:['I am a multiple of 5.','I am less than 100.','I am greater than 70.','My digits add up to 13.'],answer:85},
+  {clues:['I am a square number.','I am a multiple of 4.','I am less than 20.','I am greater than 10.'],answer:16},
+  {clues:['I am an odd number.','I am a multiple of 7.','I am between 20 and 50.','My tens digit is double my units digit.'],answer:42, note:'42 is even; revisit'},
+  {clues:['I am a multiple of 8.','I am less than 100.','My tens digit is 5 more than my units digit.','I am even.'],answer:64},
+  {clues:['I am a 3-digit number.','All three of my digits are the same.','I am a multiple of 3.','I am less than 400.'],answer:333},
+  {clues:['I am a multiple of 11.','I am less than 100.','My digits are consecutive numbers.','I am even.'],answer:56, note:'56 is a multiple of 8 but not 11 — replace'},
+  {clues:['I am a multiple of 11.','I am a 2-digit number.','My digits add up to 11.','I am less than 90.'],answer:77},
+  {clues:['I am an even number.','I am a multiple of 3.','I am between 10 and 30.','My digits add up to 6.'],answer:24},
+  {clues:['I am a square number.','I am greater than 50.','I am less than 100.','My units digit is 4.'],answer:64},
+  {clues:['I am a multiple of 7.','I am less than 50.','I am greater than 20.','My digits add up to 5.'],answer:14, note:'14 < 20; replace'},
+  {clues:['I am a multiple of 7.','I am less than 60.','I am greater than 30.','My digits add up to 8.'],answer:35},
+  {clues:['I am odd.','I am a multiple of 3.','I am between 40 and 60.','My digits add up to 9.'],answer:45},
+  {clues:['I am a factor of 48.','I am greater than 10.','I am less than 20.','I am even.'],answer:12},
+  {clues:['I am a 2-digit number.','Both digits are the same.','I am a multiple of 6.','I am less than 70.'],answer:66}
+];
+
+// Clean version with no stray note fields:
+const MAGIC_NUMBER_CLEAN=[
+  {clues:['I am a multiple of 4.','I am less than 50.','My digits add up to 9.','I am an even number.','I am greater than 30.'],answer:36},
+  {clues:['I am a multiple of 3.','I am between 20 and 40.','I am also a multiple of 4.','My tens digit is greater than my units digit.'],answer:24},
+  {clues:['I am a square number.','I am less than 50.','I am odd.','My digits add up to 7.'],answer:25},
+  {clues:['I am a multiple of 6.','I am less than 60.','I am greater than 40.','My units digit is 8.'],answer:48},
+  {clues:['I am a prime number.','I am greater than 10.','I am less than 20.','I am odd.','My units digit is 7.'],answer:17},
+  {clues:['I am a multiple of 9.','I am a 2-digit number.','My digits add up to 9.','I am less than 50.'],answer:36},
+  {clues:['I am a multiple of 5.','I am less than 100.','I am greater than 70.','My digits add up to 13.'],answer:85},
+  {clues:['I am a square number.','I am a multiple of 4.','I am less than 20.','I am greater than 10.'],answer:16},
+  {clues:['I am a multiple of 8.','I am less than 100.','My tens digit is 5 more than my units digit.','I am even.'],answer:64},
+  {clues:['I am a 3-digit number.','All three of my digits are the same.','I am a multiple of 3.','I am less than 400.'],answer:333},
+  {clues:['I am a multiple of 11.','I am a 2-digit number.','My digits add up to 11.','I am less than 90.'],answer:77},
+  {clues:['I am an even number.','I am a multiple of 3.','I am between 10 and 30.','My digits add up to 6.'],answer:24},
+  {clues:['I am a square number.','I am greater than 50.','I am less than 100.','My units digit is 4.'],answer:64},
+  {clues:['I am a multiple of 7.','I am less than 60.','I am greater than 30.','My digits add up to 8.'],answer:35},
+  {clues:['I am odd.','I am a multiple of 3.','I am between 40 and 60.','My digits add up to 9.'],answer:45},
+  {clues:['I am a factor of 48.','I am greater than 10.','I am less than 20.','I am even.'],answer:12},
+  {clues:['I am a 2-digit number.','Both digits are the same.','I am a multiple of 6.','I am less than 70.'],answer:66},
+  {clues:['I am greater than 20 and less than 40.','I am a multiple of both 2 and 5.','My digits add up to 3.'],answer:30},
+  {clues:['I am less than 30.','I am a prime number.','I am greater than 20.','I am odd.','My digits add up to 4.'],answer:23},
+  {clues:['I am a factor of 100.','I am less than 30.','I am greater than 20.','I am even.'],answer:25},
+  // ── Y4 focus: 4-digit numbers, factor pairs, fractions ────
+  {clues:['I am a 4-digit number.','My thousands digit is 2.','My hundreds digit is 5.','My tens and units digits are both 0.'],answer:2500},
+  {clues:['I am a 4-digit number.','I am between 3,000 and 4,000.','My digits add up to 10.','My hundreds digit is double my tens digit.','My units digit is 0.'],answer:3400},
+  {clues:['I am a factor pair partner of 6 — multiply me by 6 to make 48.'],answer:8},
+  {clues:['I am a factor pair partner of 9 — multiply me by 9 to make 108.','I am greater than 10.'],answer:12},
+  {clues:['I am a multiple of both 3 and 4.','I am less than 30.','I am greater than 20.','My units digit is 4.'],answer:24},
+  {clues:['I am a 4-digit number.','I am the nearest 1,000 to 4,500.','I am a multiple of 1,000.'],answer:5000},
+  {clues:['Round me to the nearest 100 and you get 600.','I am a multiple of 6.','I am less than 600.','I am greater than 550.'],answer:576}
+];
+
+// ═══════════════════════════════════════════════════════════
+// SHAPE OF THE DAY BANK
+// ═══════════════════════════════════════════════════════════
+const SHAPES=[
+  {name:'Square',type:'2D shape',questions:['How many sides does it have?','How many lines of symmetry does it have?','What are its interior angles?','Does it have any parallel sides?','Name a real-world example.'],properties:['4 equal sides, 4 equal angles.','4 lines of symmetry.','All interior angles are 90° (right angles). Angles sum = 360°.','2 pairs of parallel sides.','A chess board square, a window pane, floor tiles.']},
+  {name:'Rectangle',type:'2D shape',questions:['How many sides does it have?','How many lines of symmetry?','What are its interior angles?','Does it have parallel sides?','Name a real-world example.'],properties:['4 sides — 2 pairs of equal length.','2 lines of symmetry.','All interior angles are 90°. Angles sum = 360°.','2 pairs of parallel sides.','A door, a book, a football pitch.']},
+  {name:'Equilateral Triangle',type:'2D shape',questions:['How many sides and angles?','How many lines of symmetry?','What is each interior angle?','Is it a regular polygon?','Name a real-world example.'],properties:['3 equal sides and 3 equal angles.','3 lines of symmetry.','Each interior angle is 60°. Angles sum = 180°.','Yes — a regular polygon.','Yield road signs, a musical triangle, some roof shapes.']},
+  {name:'Isosceles Triangle',type:'2D shape',questions:['What makes it different from other triangles?','How many lines of symmetry?','Describe its angles.','Name a real-world example.'],properties:['2 equal sides and 2 equal base angles.','1 line of symmetry.','Two base angles are equal; angles sum = 180°.','Some mountain shapes, arrows, roof gables.']},
+  {name:'Scalene Triangle',type:'2D shape',questions:['What makes it different from other triangles?','How many lines of symmetry?','Describe its sides and angles.','Name a real-world example.'],properties:['All 3 sides are different lengths. All 3 angles are different.','No lines of symmetry.','No equal angles; angles sum = 180°.','Many real triangles in architecture (trusses, bridges).']},
+  {name:'Circle',type:'2D shape',questions:['Does it have any sides or corners?','How many lines of symmetry?','What is special about every point on its edge?','Name the key parts: radius, diameter, circumference.'],properties:['No straight sides or corners — it has one curved edge.','Infinite lines of symmetry — any diameter is a line of symmetry.','Every point on the edge is the same distance from the centre (the radius).','Radius = centre to edge. Diameter = across the middle. Circumference = all the way around.']},
+  {name:'Pentagon',type:'2D shape',questions:['How many sides and angles?','How many lines of symmetry (regular)?','What do interior angles sum to?','Name a real-world example.'],properties:['5 sides and 5 angles.','A regular pentagon has 5 lines of symmetry.','Interior angles sum to 540°. Each angle in a regular pentagon = 108°.','The Pentagon building in the USA, some football stitch patterns.']},
+  {name:'Hexagon',type:'2D shape',questions:['How many sides and angles?','How many lines of symmetry (regular)?','What do interior angles sum to?','Name a real-world example.'],properties:['6 sides and 6 angles.','A regular hexagon has 6 lines of symmetry.','Interior angles sum to 720°. Each angle in a regular hexagon = 120°.','Honeycomb cells, snowflakes, some tiles, nuts and bolts.']},
+  {name:'Octagon',type:'2D shape',questions:['How many sides?','How many lines of symmetry (regular)?','What do interior angles sum to?','Name a real-world example.'],properties:['8 sides and 8 angles.','A regular octagon has 8 lines of symmetry.','Interior angles sum to 1080°. Each angle = 135°.','Stop signs, some bathroom tiles, clock faces.']},
+  {name:'Parallelogram',type:'2D shape',questions:['What is special about its sides?','How many lines of symmetry?','Describe its angles.','How is it different from a rectangle?'],properties:['2 pairs of parallel, equal-length sides.','0 lines of symmetry (unlike a rectangle).','Opposite angles are equal; adjacent angles sum to 180°.','Like a rectangle that has been pushed to the side — no right angles (unless it is a rectangle).']},
+  {name:'Rhombus',type:'2D shape',questions:['What is special about its sides?','How many lines of symmetry?','Describe its angles.','How is it different from a square?'],properties:['All 4 sides are equal length.','2 lines of symmetry (the two diagonals).','Opposite angles are equal; adjacent angles sum to 180°.','Like a square that has been tilted — sides equal but angles are not right angles.']},
+  {name:'Trapezium',type:'2D shape',questions:['What is special about its sides?','How many lines of symmetry?','Describe its angles.','Name a real-world example.'],properties:['Exactly 1 pair of parallel sides.','An isosceles trapezium has 1 line of symmetry; a general trapezium has none.','Angles on the same side between the parallel sides add to 180°.','A bridge support, cross-section of a canal, some table shapes.']},
+  {name:'Cube',type:'3D shape',questions:['How many faces, edges and vertices?','What shape are the faces?','How many lines of symmetry?','Name a real-world example.'],properties:['6 faces, 12 edges, 8 vertices.','All faces are squares.','A cube has 9 planes of symmetry.','A dice, a Rubik\'s Cube, sugar cubes.']},
+  {name:'Cuboid',type:'3D shape',questions:['How many faces, edges and vertices?','What shape are the faces?','How is it different from a cube?','Name a real-world example.'],properties:['6 faces, 12 edges, 8 vertices.','Faces are rectangles (some may be squares).','Sides are not all equal — length, width and height can differ.','A cereal box, a book, a brick.']},
+  {name:'Cylinder',type:'3D shape',questions:['How many faces, edges and vertices?','Describe the faces.','Does it have any curved surfaces?','Name a real-world example.'],properties:['2 flat circular faces, 1 curved surface. 0 vertices, 2 curved edges.','Two circles at the top and bottom.','Yes — the curved surface wraps around the side.','A tin can, a toilet roll, a rolling pin.']},
+  {name:'Sphere',type:'3D shape',questions:['How many faces, edges and vertices?','What is special about every point on its surface?','Is it the same as a circle?','Name a real-world example.'],properties:['1 curved surface. 0 flat faces, 0 edges, 0 vertices.','Every point on the surface is the same distance from the centre.','No — a circle is 2D; a sphere is the 3D version.','A football, a marble, the Earth, bubbles.']},
+  {name:'Cone',type:'3D shape',questions:['How many faces, edges and vertices?','Describe the faces.','Where is the apex?','Name a real-world example.'],properties:['1 flat circular face, 1 curved surface. 1 vertex (the apex). 1 curved edge.','A circular base and a curved surface tapering to a point.','The apex is the sharp point at the top.','An ice cream cone, a party hat, a traffic cone.']},
+  {name:'Triangular Prism',type:'3D shape',questions:['How many faces, edges and vertices?','What shapes are the faces?','What is a cross-section?','Name a real-world example.'],properties:['5 faces, 9 edges, 6 vertices.','2 triangular faces and 3 rectangular faces.','A triangular cross-section all the way along — the same shape at each end.','A Toblerone box, a tent, a door wedge.']},
+  {name:'Square-Based Pyramid',type:'3D shape',questions:['How many faces, edges and vertices?','What shapes are the faces?','Where is the apex?','Name a real-world example.'],properties:['5 faces, 8 edges, 5 vertices.','1 square base and 4 triangular faces.','The apex is the single point at the top.','The Egyptian pyramids, some chocolate shapes.']}
+];
+
+// ═══════════════════════════════════════════════════════════
+// ESTIMATION STATION BANK
+// ═══════════════════════════════════════════════════════════
+const ESTIMATION=[
+  {question:'How many grapes fit inside a standard mug?',answer:'Around 20–30 grapes, depending on size.',explanation:"A standard mug holds about 300ml. Grapes are roughly the size of a 20–25ml space each."},
+  {question:'How tall is a double-decker bus in centimetres?',answer:'About 420–450 cm (roughly 4.4 metres).',explanation:"A standard London Routemaster bus is about 4.38 m tall — just over 4 times a metre stick."},
+  {question:'How many times does your heart beat in one minute?',answer:'About 60–100 times per minute (average: about 75).',explanation:"The average resting heart rate for a child is around 70–90 beats per minute."},
+  {question:'How many steps does an average person take in a day?',answer:'About 6,000–10,000 steps.',explanation:"Health guidelines suggest 10,000 steps. Many people average around 6,000–8,000."},
+  {question:'How many litres of water does a bathtub hold?',answer:'Around 150–200 litres.',explanation:"A standard UK bath holds about 150–180 litres when full to a comfortable level."},
+  {question:'How many times do you blink in one hour?',answer:'About 900–1,200 times.',explanation:"People blink roughly 15–20 times per minute, so in an hour that is around 900–1,200 blinks."},
+  {question:'If you laid all your blood vessels end to end, how far would they stretch?',answer:'About 100,000 km — enough to go around the Earth 2.5 times!',explanation:"The human body contains roughly 100,000 km of blood vessels including capillaries."},
+  {question:'How many bones does an adult human have?',answer:'206 bones.',explanation:"Babies are born with around 270–300 bones, but many fuse together as we grow."},
+  {question:'How long (in seconds) does it take the Earth to orbit the Sun?',answer:'About 31,557,600 seconds (365.25 days × 24 × 60 × 60).',explanation:"One year = 365.25 days × 24 hours × 60 minutes × 60 seconds ≈ 31.5 million seconds."},
+  {question:'How many sheets of A4 paper are stacked in a pile 1 cm high?',answer:'About 100 sheets (each sheet is about 0.1 mm thick).',explanation:"Standard copier paper is around 80 gsm and approximately 0.1 mm thick, giving 100 sheets per cm."},
+  {question:'How heavy (in kg) is a male African elephant?',answer:'About 5,000–6,000 kg (5–6 tonnes).',explanation:"Adult male African elephants typically weigh between 4,500 and 6,000 kg — the largest land animal."},
+  {question:'How many hairs are on a human head?',answer:'About 100,000 hairs on average.',explanation:"The average person has between 80,000 and 120,000 hairs, with blonde hair tending to have more and red hair fewer."},
+  {question:'How far away is the Moon from the Earth in kilometres?',answer:'About 384,400 km.',explanation:"The Moon's average distance from Earth is approximately 384,400 km — though it varies slightly as the Moon follows an elliptical orbit."},
+  {question:'How many grains of rice are in a standard 500g bag?',answer:'About 25,000–26,000 grains.',explanation:"A grain of dry long-grain rice weighs roughly 0.02 g, so 500 g ÷ 0.02 ≈ 25,000 grains."},
+  {question:'How many words does an average Year 4 pupil know?',answer:'Around 8,000–10,000 words.',explanation:"Research suggests children know roughly 8,000–10,000 words by age 8–9, learning about 1,000 new words per year."},
+  {question:'How long (in metres) is a blue whale?',answer:'About 25–30 metres.',explanation:"The blue whale is the largest animal ever known — adults typically reach 24–30 m in length."},
+  {question:'How many litres of blood does an adult human body contain?',answer:'About 4.5–5.5 litres.',explanation:"An average adult has around 5 litres of blood — roughly filling a 5-litre water bottle."},
+  {question:'How many footballs would fit inside a school sports hall?',answer:'Thousands! A standard hall (20m × 12m × 6m) could fit around 25,000–30,000 footballs.',explanation:"A football has a volume of about 5.5 litres. The hall volume ÷ 5.5 litres ≈ 26,000 balls (roughly, allowing for gaps)."},
+  {question:'How many centimetres taller does the average person grow between age 8 and age 18?',answer:'About 30–40 cm (roughly 3–4 cm per year on average).',explanation:"Children grow at varying rates, with a major growth spurt usually in early adolescence."},
+  {question:'How many times can you write the letter A in one minute?',answer:'Most people can write it about 100–150 times.',explanation:"Try it! Writing one letter takes about 0.4–0.6 seconds, giving roughly 100–150 in a minute."},
+  {question:'How many swimming pools full of water flow over Niagara Falls in one minute?',answer:'About 168 Olympic swimming pools per minute!',explanation:"Niagara Falls flows at about 2,800 m³/s. An Olympic pool holds 2,500 m³. That is over 67 pools per second!"},
+  {question:'How many times does a hummingbird flap its wings per second?',answer:'About 50–80 times per second.',explanation:"Hummingbirds beat their wings incredibly fast — around 50 times per second for large species and up to 80 for smaller ones."},
+  {question:'How many planets could fit inside the Sun?',answer:'About 1.3 million Earths — or about 1,000 Jupiters.',explanation:"The Sun has a volume of about 1.41 × 10¹⁸ km³. Earth's volume is about 1.08 × 10¹² km³. Divide for ~1.3 million."},
+  {question:'How many seconds old will you be when you celebrate your 10th birthday?',answer:'About 315,360,000 seconds (315 million seconds)!',explanation:"10 years × 365.25 days × 24 hours × 60 minutes × 60 seconds ≈ 315,576,000 seconds."},
+  {question:'How many A4 sheets of paper would you need to cover the floor of your classroom?',answer:'Roughly 300–400 sheets for a typical classroom (about 50–60 m²).',explanation:"An A4 sheet is 0.0623 m². A standard classroom is about 50–60 m². 60 ÷ 0.0623 ≈ 960 sheets — but most people underestimate!"}
+];
+
+// ═══════════════════════════════════════════════════════════
+// MAP CHALLENGE BANK
+// ═══════════════════════════════════════════════════════════
+const MAP_CHALLENGE=[
+  // ── SOUTH AMERICA (Y4 Geography core) ─────────────────────
+  {country:'Brazil',facts:['It is the largest country in South America.','The Amazon rainforest, which covers much of the north, is the world\'s largest tropical rainforest.','Brazil is the only country in South America where Portuguese is the main language.'],questions:['What continent is Brazil in?','Is Brazil in the northern or southern hemisphere?','What is the capital city of Brazil?'],answers:['South America.','Mostly the southern hemisphere (though part of the north crosses the Equator).','Brasília (not Rio de Janeiro — that\'s the most famous city, but not the capital!).']},
+  {country:'Peru',facts:['Peru lies on the western coast of South America, bordering the Pacific Ocean.','The Andes mountain range runs along Peru\'s western side — it is the world\'s longest mountain range.','The Amazon River has its source in the mountains of Peru before flowing east across Brazil.'],questions:['What continent is Peru in?','Name two countries that border Peru.','What is the capital city of Peru?'],answers:['South America.','Any two of: Brazil, Colombia, Ecuador, Bolivia, Chile.','Lima.']},
+  {country:'Colombia',facts:['Colombia is the only country in South America with coastlines on both the Pacific Ocean and the Caribbean Sea.','The Andes mountain range passes through the west of the country.','Colombia is one of the world\'s biggest producers of coffee and cut flowers.'],questions:['What continent is Colombia in?','Is Colombia closer to the Equator or the Tropic of Capricorn?','What is the capital city of Colombia?'],answers:['South America.','The Equator — Colombia is very close to it and sits in the tropical zone.','Bogotá.']},
+  {country:'Ecuador',facts:['Ecuador sits right on the Equator — in fact, its name means \'equator\' in Spanish!','The Galápagos Islands, famous for their unique wildlife, belong to Ecuador.','Ecuador is one of the smaller countries in South America, but it has huge biodiversity.'],questions:['What continent is Ecuador in?','Why is Ecuador\'s name appropriate for where it is?','Name a country that borders Ecuador.'],answers:['South America.','Because it sits on the Equator — \'Ecuador\' is Spanish for \'equator\'.','Colombia (to the north) or Peru (to the south).']},
+  {country:'Bolivia',facts:['Bolivia is a landlocked country — it has no coastline.','La Paz is one of the highest capital cities in the world, sitting in the Andes mountains.','Bolivia contains part of the Amazon basin and is rich in biodiversity.'],questions:['What continent is Bolivia in?','What does \'landlocked\' mean?','Name a country that borders Bolivia.'],answers:['South America.','It means the country has no coastline — it is completely surrounded by other countries on land.','Any of: Peru, Brazil, Argentina, Chile, Paraguay.']},
+  {country:'Chile',facts:['Chile is one of the world\'s longest and narrowest countries, stretching nearly 4,300 km from north to south.','The Atacama Desert in northern Chile is one of the driest places on Earth.','The Andes mountain range forms Chile\'s eastern border with Argentina.'],questions:['What continent is Chile in?','Is Chile to the east or west coast of South America?','What is the capital city of Chile?'],answers:['South America.','West coast — it borders the Pacific Ocean.','Santiago.']},
+  {country:'Venezuela',facts:['Venezuela is in the north of South America, on the Caribbean coast.','Angel Falls in Venezuela is the world\'s highest uninterrupted waterfall.','The Orinoco is one of South America\'s major rivers, flowing through Venezuela.'],questions:['What continent is Venezuela in?','Which ocean or sea does Venezuela border in the north?','Name a country that borders Venezuela.'],answers:['South America.','The Caribbean Sea (part of the Atlantic Ocean).','Any of: Colombia, Brazil, Guyana.']},
+  {country:'Argentina',facts:['Argentina is the second largest country in South America.','The Pampas — vast flat grasslands — cover much of central Argentina.','Argentina is in the southern hemisphere, so its seasons are opposite to ours in the UK.'],questions:['What continent is Argentina in?','Why are Argentina\'s seasons opposite to the UK\'s?','What is the capital city of Argentina?'],answers:['South America.','Because it is in the southern hemisphere — when the UK has winter, Argentina has summer.','Buenos Aires.']},
+  // ── UK & LONDON (Y4 Geography core) ───────────────────────
+  {country:'London, England',facts:['London is the capital city of England and the United Kingdom.','The River Thames flows through the centre of London from west to east.','London is home to famous landmarks including the Palace of Westminster, Tower of London and Buckingham Palace.'],questions:['In which country is London?','Name the river that flows through London.','Name one South-East English county that borders Greater London.'],answers:['England (and the United Kingdom).','The River Thames.','Any of: Kent, Surrey, Essex, Hertfordshire, Berkshire.']},
+  {country:'South-East England',facts:['The South-East is one of England\'s most densely populated regions.','The White Cliffs of Dover in Kent face the English Channel and France.','The South-East includes counties such as Kent, Surrey, Sussex, Essex, Buckinghamshire and Hampshire.'],questions:['Name the capital city of England (in the South-East).','Name the body of water between South-East England and France.','Name two South-East counties.'],answers:['London.','The English Channel (or Strait of Dover at the narrowest point).','Any two of: Kent, Surrey, East Sussex, West Sussex, Essex, Buckinghamshire, Hampshire, Berkshire, Oxfordshire.']},
+  {country:'England',facts:['England is the largest of the four countries that make up the United Kingdom.','Significant English cities include London, Bristol, Manchester, Birmingham, Leeds, Sheffield, Liverpool and Newcastle.','The Lake District in the north-west and the Peak District in the north are famous national parks.'],questions:['Name the four countries that make up the United Kingdom.','Name the national park in north-west England known for its lakes.','What is the capital city of England?'],answers:['England, Scotland, Wales and Northern Ireland.','The Lake District.','London.']},
+  // ── MEXICO / MAYAN GEOGRAPHY (Y4 History contrast unit) ───
+  {country:'Mexico',facts:['Mexico is in North America, directly south of the United States.','The ancient Maya and Aztec civilisations both flourished in what is now Mexico.','Mexico is home to over 60 volcanoes, some still active today.'],questions:['What continent is Mexico in?','Which ancient civilisation built pyramids in Mexico?','Name a country that borders Mexico to the south.'],answers:['North America.','The Maya (and the Aztecs). The Mayan civilisation is one we study in Year 4.','Guatemala or Belize.']},
+  {country:'Guatemala',facts:['Guatemala is in Central America, directly south of Mexico.','It was the heartland of the ancient Maya civilisation — many Mayan temples are here.','Lake Atitlán in Guatemala is one of the most beautiful volcanic lakes in the world.'],questions:['What region is Guatemala in?','Which ancient civilisation is closely linked to Guatemala?','What country is directly to the north of Guatemala?'],answers:['Central America (between North and South America).','The Maya — many of their greatest cities were built in what is now Guatemala.','Mexico.']},
+  // ── REST OF WORLD (general knowledge) ─────────────────────
+  {country:'Brazil — Rainforest Deep Dive',facts:['The Amazon rainforest produces around 20% of the world\'s oxygen.','The soil in the Amazon rainforest is actually not very fertile — nutrients are stored in the plants, not the ground.','Deforestation is destroying large areas of rainforest for farming and roads.'],questions:['Where is the Amazon rainforest mainly found?','Why is Amazon soil surprisingly poor for farming once the forest is cleared?','What is deforestation?'],answers:['Mainly in Brazil, with parts in Peru, Colombia and other South American countries.','Because nutrients are held in the vegetation itself, not in the soil — once trees are removed the soil is quickly exhausted.','The large-scale cutting down of forests, usually to clear land for farming or building.']},
+  {country:'France',facts:['France is the largest country in Western Europe by area.','It shares borders with eight countries: Spain, Andorra, Monaco, Italy, Switzerland, Germany, Luxembourg and Belgium.','The River Seine flows through Paris, the capital.'],questions:['What continent is France in?','Name two countries that border France.','What is the capital city of France?'],answers:['Europe.','Any two of: Spain, Andorra, Monaco, Italy, Switzerland, Germany, Luxembourg, Belgium.','Paris.']},
+  {country:'Japan',facts:['Japan is an archipelago — a chain of islands — in the Pacific Ocean.','Mount Fuji is Japan\'s highest peak and an iconic symbol of the country.','The Japanese art tradition of woodblock printing inspired the artist Hokusai, whom we study in Year 4 art.'],questions:['What continent is Japan closest to?','What is an archipelago?','Name one of Japan\'s most famous natural landmarks.'],answers:['Asia.','A group or chain of islands.','Mount Fuji (a dormant volcano).']},
+  {country:'Egypt',facts:['The River Nile flows through Egypt from south to north, emptying into the Mediterranean Sea.','Egypt is home to the Pyramids of Giza, one of the Seven Wonders of the Ancient World.','Most of Egypt is desert — nearly all Egyptians live along the Nile.'],questions:['What continent is Egypt in?','In which direction does the River Nile flow?','What is the capital city of Egypt?'],answers:['Africa.','South to north — unusually, it flows northwards to reach the Mediterranean Sea.','Cairo.']},
+  {country:'India',facts:['India is one of the world\'s most populous countries with over 1.4 billion people.','The Himalaya mountain range forms India\'s northern border.','The Ganges is India\'s most important and sacred river.'],questions:['What continent is India in?','Name the mountain range on India\'s northern border.','What is the capital city of India?'],answers:['Asia.','The Himalayas.','New Delhi.']},
+  {country:'Australia',facts:['Australia is the only country that is also an entire continent.','The Great Barrier Reef — the world\'s largest coral reef system — runs along its north-east coast.','Australia is in the southern hemisphere, so its seasons are the opposite of the UK\'s.'],questions:['What is special about Australia compared to all other countries?','Why are Australia\'s seasons opposite to ours?','What is the capital city of Australia?'],answers:['It is the only country that is also a whole continent on its own.','Because it is in the southern hemisphere.','Canberra (not Sydney — Sydney is the largest city but Canberra is the capital).']}
+];
+
+// ═══════════════════════════════════════════════════════════
+// TIMELINE PUZZLE BANK
+// Each entry: events array (shuffled for display), events sorted for answer
+// ═══════════════════════════════════════════════════════════
+const TIMELINE_SETS=[
+  // ── ANGLO-SAXONS & VIKINGS (Y4 History core) ──────────────
+  {title:'Anglo-Saxon Britain',events:[{year:410,text:'Romans leave Britain — Anglo-Saxon tribes begin to settle'},{year:597,text:'St Augustine arrives — Christianity introduced to England'},{year:793,text:'Vikings raid Lindisfarne monastery — start of Viking Age in Britain'},{year:871,text:'Alfred the Great becomes King of Wessex'},{year:1066,text:'Battle of Hastings — Normans defeat Anglo-Saxons'}]},
+  {title:'The Viking Age in Britain',events:[{year:793,text:'First Viking raid on Lindisfarne'},{year:865,text:'The Great Heathen Army of Vikings invades Britain'},{year:878,text:'Alfred the Great defeats the Vikings at Battle of Edington'},{year:937,text:'Athelstan becomes first King of all England'},{year:1016,text:'Canute the Great — first Viking King of England'}]},
+  {title:'Saxon Kings',events:[{year:802,text:'Egbert — first recognised King of all England'},{year:871,text:'Alfred the Great begins his reign (871–899 AD)'},{year:899,text:'Death of Alfred the Great'},{year:954,text:'Eric Bloodaxe (last Viking King of York) defeated — England unified'},{year:1013,text:'King Ethelred the Unready flees to Normandy'}]},
+  {title:'Road to the Norman Conquest',events:[{year:1013,text:'Sweyn Forkbeard becomes King of England — briefly'},{year:1016,text:'Canute becomes King of England'},{year:1042,text:'Edward the Confessor becomes King of England'},{year:1065,text:'Westminster Abbey consecrated (built by Edward the Confessor)'},{year:1066,text:'Battle of Hastings — William the Conqueror defeats King Harold'}]},
+  // ── MAYAN CIVILISATION (Y4 History contrast unit) ─────────
+  {title:'The Maya Civilisation',events:[{year:-700,text:'The Maya develop one of the world\'s first writing systems'},{year:-400,text:'The Maya develop the concept of zero in mathematics'},{year:100,text:'First great Maya pyramids and cities are built'},{year:600,text:'Height of the Classic Maya period — magnificent cities flourish'},{year:900,text:'The Classic Maya period ends — many cities abandoned'}]},
+  {title:'Maya Achievements',events:[{year:-3114,text:'Start of the Maya Long Count calendar'},{year:-700,text:'Maya develop a hieroglyphic writing system (one of only five ever invented independently)'},{year:-400,text:'Maya concept of zero — centuries before Europe uses it'},{year:100,text:'Teotihuacan — one of the earliest great cities in the Americas — is built'},{year:683,text:'Death of Ahau Pacal Votan — great Maya ruler buried in his famous pyramid'}]},
+  // ── THE TUDORS & STUARTS (Y3 cross-link / general knowledge) ──
+  {title:'The Tudors',events:[{year:1485,text:'Henry VII — first Tudor king'},{year:1509,text:'Henry VIII becomes king'},{year:1533,text:'Henry VIII marries Anne Boleyn'},{year:1558,text:'Elizabeth I becomes queen'},{year:1603,text:'Death of Elizabeth I — end of Tudor period'}]},
+  {title:'The Tudors & Stuarts',events:[{year:1485,text:'Henry VII becomes first Tudor king'},{year:1534,text:'Henry VIII breaks with the Church of Rome'},{year:1588,text:'Spanish Armada defeated by England'},{year:1605,text:'Gunpowder Plot (Guy Fawkes)'},{year:1666,text:'Great Fire of London'}]},
+  // ── SCIENCE & INVENTION (general knowledge) ───────────────
+  {title:'Science & Invention',events:[{year:1608,text:'Telescope invented (Lippershey)'},{year:1687,text:'Newton publishes his laws of gravity and motion'},{year:1796,text:'Jenner develops smallpox vaccine'},{year:1879,text:'Edison invents practical electric light bulb'},{year:1928,text:'Fleming discovers penicillin'}]},
+  {title:'Inventions',events:[{year:1440,text:'Gutenberg invents the printing press'},{year:1769,text:'James Watt improves the steam engine'},{year:1876,text:'Alexander Graham Bell patents the telephone'},{year:1903,text:'First powered aeroplane flight (Wright Brothers)'},{year:1945,text:'First computer (ENIAC) built'}]},
+  // ── 20th CENTURY & MODERN (general knowledge) ─────────────
+  {title:'20th Century',events:[{year:1939,text:'World War Two begins'},{year:1945,text:'World War Two ends'},{year:1953,text:'Edmund Hillary and Tenzing Norgay reach the summit of Everest'},{year:1969,text:'Neil Armstrong walks on the Moon'},{year:1989,text:'Fall of the Berlin Wall'}]},
+  {title:'Modern World',events:[{year:1948,text:'NHS (National Health Service) founded in Britain'},{year:1957,text:'Sputnik — first artificial satellite launched'},{year:1990,text:'World Wide Web invented by Tim Berners-Lee'},{year:2004,text:'Facebook launched'},{year:2020,text:'COVID-19 pandemic begins'}]},
+  {title:'Space Race',events:[{year:1957,text:'Sputnik 1 — first satellite in space (USSR)'},{year:1961,text:'Yuri Gagarin — first human in space'},{year:1963,text:'Valentina Tereshkova — first woman in space'},{year:1969,text:'Apollo 11 — first Moon landing'},{year:1971,text:'First space station (Salyut 1) launched'}]},
+  {title:'Rights & Milestones',events:[{year:1807,text:'Slave trade abolished in the British Empire'},{year:1918,text:'Some women get the vote in Britain'},{year:1948,text:'Universal Declaration of Human Rights adopted by the UN'},{year:1948,text:'NHS founded — free healthcare for everyone in Britain'},{year:1969,text:'First humans walk on the Moon'}]},
+  {title:'19th & Early 20th Century',events:[{year:1805,text:'Battle of Trafalgar — Nelson defeats French and Spanish fleets'},{year:1863,text:'London Underground opens (first metro system in the world)'},{year:1903,text:'Wright Brothers make first powered flight'},{year:1912,text:'Titanic sinks'},{year:1914,text:'World War One begins'}]}
+];
+
+// ═══════════════════════════════════════════════════════════
+// WOULD YOU RATHER (MATHS) BANK
+// ═══════════════════════════════════════════════════════════
+const WOULD_YOU_RATHER=[
+  {question:'Would you rather have…',optA:'£5 a day for 10 days',optB:'£1 doubled each day for 6 days',workingA:'£5 × 10 = £50',workingB:'Day 1: £1, Day 2: £2, Day 3: £4, Day 4: £8, Day 5: £16, Day 6: £32. Total = £63!',answer:'Option B — doubling wins! £63 > £50. Doubling (exponential growth) beats steady saving.'},
+  {question:'Would you rather have…',optA:'10% of £200',optB:'25% of £80',workingA:'10% of £200 = £200 ÷ 10 = £20',workingB:'25% of £80 = £80 ÷ 4 = £20',answer:'They are equal! Both give exactly £20.'},
+  {question:'Would you rather have the bigger area: …',optA:'A square with sides of 8 cm',optB:'A rectangle 12 cm × 5 cm',workingA:'Area = 8 × 8 = 64 cm²',workingB:'Area = 12 × 5 = 60 cm²',answer:'Option A — the square has the bigger area: 64 cm² vs 60 cm².'},
+  {question:'Would you rather have…',optA:'1/2 of 120',optB:'2/3 of 90',workingA:'1/2 of 120 = 60',workingB:'2/3 of 90 = 90 ÷ 3 × 2 = 60',answer:'They are equal! Both give exactly 60.'},
+  {question:'Would you rather run…',optA:'8 laps of a 400 m track',optB:'3.5 km in total',workingA:'8 × 400 m = 3,200 m = 3.2 km',workingB:'3.5 km = 3,500 m',answer:'Option A is shorter — 3,200 m vs 3,500 m. Choose 8 laps!'},
+  {question:'Would you rather save…',optA:'20p every day for a year (365 days)',optB:'£60 in one go',workingA:'20p × 365 = 7,300p = £73.00',workingB:'£60 in one go',answer:'Option A — saving 20p daily for a year gives £73, which beats £60.'},
+  {question:'Would you rather have the bigger perimeter: …',optA:'A square with sides of 9 cm',optB:'A rectangle 14 cm × 3 cm',workingA:'Perimeter = 4 × 9 = 36 cm',workingB:'Perimeter = 2 × (14 + 3) = 2 × 17 = 34 cm',answer:'Option A — the square has the bigger perimeter: 36 cm vs 34 cm.'},
+  {question:'Would you rather have…',optA:'30% of £90',optB:'A quarter of £100',workingA:'30% of £90 = £90 ÷ 10 × 3 = £27',workingB:'¼ of £100 = £25',answer:'Option A — 30% of £90 = £27, which is more than ¼ of £100 = £25.'},
+  {question:'Would you rather eat…',optA:'3/4 of a 400 g pizza',optB:'2/3 of a 450 g pizza',workingA:'3/4 of 400 g = 300 g',workingB:'2/3 of 450 g = 300 g',answer:'They are equal! Both give exactly 300 g.'},
+  {question:'Would you rather receive pocket money: …',optA:'£3.50 per week for 12 weeks',optB:'£3 per week for 13 weeks',workingA:'£3.50 × 12 = £42',workingB:'£3 × 13 = £39',answer:'Option A — £42 is more than £39.'},
+  {question:'Would you rather have the taller stack of books: …',optA:'12 books each 2.5 cm thick',optB:'8 books each 4 cm thick',workingA:'12 × 2.5 cm = 30 cm',workingB:'8 × 4 cm = 32 cm',answer:'Option B — 32 cm is taller than 30 cm.'},
+  {question:'Would you rather have…',optA:'50% of 144',optB:'Three-quarters of 100',workingA:'50% of 144 = 72',workingB:'3/4 of 100 = 75',answer:'Option B — 75 is more than 72.'},
+  {question:'Would you rather travel…',optA:'Twice as fast, but for half as long',optB:'Stay at the same speed for the same time',workingA:'If normal = d miles, twice the speed for half the time = same distance.',workingB:'Normal speed = same distance.',answer:'They are equal! Doubling speed and halving time means you travel the same distance.'},
+  {question:'Would you rather share…',optA:'£72 equally between 9 people',optB:'£56 equally between 7 people',workingA:'£72 ÷ 9 = £8 each',workingB:'£56 ÷ 7 = £8 each',answer:'They are equal! Both give £8 per person.'},
+  {question:'Would you rather have the bigger volume: …',optA:'A box 6 cm × 4 cm × 5 cm',optB:'A box 5 cm × 5 cm × 4 cm',workingA:'Volume = 6 × 4 × 5 = 120 cm³',workingB:'Volume = 5 × 5 × 4 = 100 cm³',answer:'Option A — 120 cm³ is bigger than 100 cm³.'},
+  {question:'Would you rather have…',optA:'60% of 60',optB:'40% of 90',workingA:'60% of 60 = 36',workingB:'40% of 90 = 36',answer:'They are equal! Both give exactly 36.'},
+  {question:'Would you rather buy…',optA:'3 books at £4.75 each',optB:'5 books at £2.85 each',workingA:'3 × £4.75 = £14.25',workingB:'5 × £2.85 = £14.25',answer:'They cost the same! Both come to £14.25.'},
+  {question:'Would you rather have the longer total: …',optA:'7 ropes, each 1 m 30 cm long',optB:'6 ropes, each 1 m 55 cm long',workingA:'7 × 130 cm = 910 cm',workingB:'6 × 155 cm = 930 cm',answer:'Option B — 930 cm (9.3 m) is longer than 910 cm (9.1 m).'},
+  {question:'Would you rather score…',optA:'80% in a 50-question test',optB:'3/4 of marks in a 60-question test',workingA:'80% of 50 = 40 questions correct',workingB:'3/4 of 60 = 45 questions correct',answer:'Option B — 45 correct is a better score than 40 correct.'},
+  {question:'Would you rather have the more efficient journey: …',optA:'120 km in 2 hours',optB:'200 km in 4 hours',workingA:'Speed = 120 ÷ 2 = 60 km/h',workingB:'Speed = 200 ÷ 4 = 50 km/h',answer:'Option A is faster — 60 km/h vs 50 km/h.'}
+];
+
+// ═══════════════════════════════════════════════════════════
 // NUMBER PUZZLE ENGINE
 // ═══════════════════════════════════════════════════════════
 function combos(a,k){if(!k)return[[]];if(a.length<k)return[];const[h,...t]=a;return[...combos(t,k-1).map(c=>[h,...c]),...combos(t,k)]}
@@ -992,11 +1364,12 @@ function getTTSet(){
 // STATE & INIT
 // ═══════════════════════════════════════════════════════════
 let pType='boggle',cur=null,solsOpen=false;
+const ALL_TYPES=['boggle','number','combined','spotmistake','wordofday','synant','magicnumber','shapeday','estimation','mapchallenge','timeline','wouldyourather'];
 
 function init(){
   renderDate();renderLunch();renderMsg();loadImg();
   const d=new Date().getDate();
-  pType=d%3===0?'boggle':d%3===1?'number':'combined';
+  pType=ALL_TYPES[d%ALL_TYPES.length];
   newPuzzle();updateDot();
 }
 
@@ -1026,45 +1399,75 @@ function renderMsg(){
 // PUZZLES
 // ═══════════════════════════════════════════════════════════
 function newPuzzle(){
+  clearPuzzlePanel();
   if(pType==='boggle'){
     const e=BOGGLE[Math.floor(Math.random()*BOGGLE.length)];
     cur={type:'boggle',word:e.w,letters:[...e.w].sort(()=>Math.random()-.5),sols:e.s};
     renderBoggle(cur);
   } else if(pType==='number'){
     cur={type:'number',...genNum()};renderNum(cur);
-  } else {
+  } else if(pType==='combined'){
     cur={type:'combined'};renderCombined();
+  } else if(pType==='spotmistake'){
+    const e=SPOT_MISTAKE[Math.floor(Math.random()*SPOT_MISTAKE.length)];
+    cur={type:'spotmistake',data:e};renderSpotMistake(e);
+  } else if(pType==='wordofday'){
+    const e=WORD_OF_DAY[Math.floor(Math.random()*WORD_OF_DAY.length)];
+    cur={type:'wordofday',data:e};renderWordOfDay(e);
+  } else if(pType==='synant'){
+    const e=SYN_ANT[Math.floor(Math.random()*SYN_ANT.length)];
+    cur={type:'synant',data:e};renderSynAnt(e);
+  } else if(pType==='magicnumber'){
+    const e=MAGIC_NUMBER_CLEAN[Math.floor(Math.random()*MAGIC_NUMBER_CLEAN.length)];
+    cur={type:'magicnumber',data:e};renderMagicNumber(e);
+  } else if(pType==='shapeday'){
+    const e=SHAPES[Math.floor(Math.random()*SHAPES.length)];
+    cur={type:'shapeday',data:e};renderShapeDay(e);
+  } else if(pType==='estimation'){
+    const e=ESTIMATION[Math.floor(Math.random()*ESTIMATION.length)];
+    cur={type:'estimation',data:e};renderEstimation(e);
+  } else if(pType==='mapchallenge'){
+    const e=MAP_CHALLENGE[Math.floor(Math.random()*MAP_CHALLENGE.length)];
+    cur={type:'mapchallenge',data:e};renderMapChallenge(e);
+  } else if(pType==='timeline'){
+    const e=TIMELINE_SETS[Math.floor(Math.random()*TIMELINE_SETS.length)];
+    cur={type:'timeline',data:e};renderTimeline(e);
+  } else if(pType==='wouldyourather'){
+    const e=WOULD_YOU_RATHER[Math.floor(Math.random()*WOULD_YOU_RATHER.length)];
+    cur={type:'wouldyourather',data:e};renderWouldYouRather(e);
   }
   closeSols();
 }
+
+function clearPuzzlePanel(){
+  const pp=document.getElementById('puzzle-panel');
+  pp.style.display='flex';pp.innerHTML='';
+  const cp=document.getElementById('combined-panel');if(cp)cp.remove();
+}
 function toggleType(){
-  const types=['boggle','number','combined'];
-  pType=types[(types.indexOf(pType)+1)%3];
+  pType=ALL_TYPES[(ALL_TYPES.indexOf(pType)+1)%ALL_TYPES.length];
   newPuzzle();
 }
 
 function renderBoggle(p){
-  document.getElementById('puzzle-panel').style.display='flex';
-  document.getElementById('puzzle-panel').innerHTML=
-    `<div class="pgrid">${p.letters.map(l=>`<div class="pcell">${l.toLowerCase()}</div>`).join('')}</div>
+  const pp=document.getElementById('puzzle-panel');
+  pp.innerHTML=`<div class="pgrid">${p.letters.map(l=>`<div class="pcell">${l.toLowerCase()}</div>`).join('')}</div>
      <div class="ptitle">How Many Words Can You Make?</div>`;
-  let cp=document.getElementById('combined-panel');if(cp)cp.remove();
 }
 function renderNum(p){
-  document.getElementById('puzzle-panel').style.display='flex';
-  document.getElementById('puzzle-panel').innerHTML=
-    `<div class="pgrid">${p.grid.map(n=>`<div class="pcell">${n}</div>`).join('')}</div>
+  const pp=document.getElementById('puzzle-panel');
+  pp.innerHTML=`<div class="pgrid">${p.grid.map(n=>`<div class="pcell">${n}</div>`).join('')}</div>
      <table class="num-tbl">
        <thead><tr><th class="th-2">2 Numbers</th><th class="th-3">3 Numbers</th><th class="th-4">4 Numbers</th></tr></thead>
        <tbody>${[0,1,2,3,4].map(i=>`<tr><td class="td-2">${p.targets.two[i]??''}</td><td class="td-3">${p.targets.three[i]??''}</td><td class="td-4">${p.targets.four[i]??''}</td></tr>`).join('')}</tbody>
      </table>`;
-  let cp=document.getElementById('combined-panel');if(cp)cp.remove();
 }
 
 function renderCombined(){
-  document.getElementById('puzzle-panel').style.display='none';
+  const pp=document.getElementById('puzzle-panel');
+  pp.style.display='none';
   let cp=document.getElementById('combined-panel');
-  if(!cp){cp=document.createElement('div');cp.id='combined-panel';document.getElementById('puzzle-panel').parentNode.insertBefore(cp,document.getElementById('puzzle-panel'));}
+  if(!cp){cp=document.createElement('div');cp.id='combined-panel';pp.parentNode.insertBefore(cp,pp);}
 
   // pick anagram set
   const aSet=ANAGRAM_BANK[Math.floor(Math.random()*ANAGRAM_BANK.length)];
@@ -1143,6 +1546,188 @@ function renderCombined(){
 }
 
 // ═══════════════════════════════════════════════════════════
+// NEW PUZZLE RENDERERS
+// ═══════════════════════════════════════════════════════════
+
+function renderSpotMistake(e){
+  const pp=document.getElementById('puzzle-panel');
+  pp.style.cssText='display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:1.8vh 2.2vw;gap:0.8vh;overflow-y:auto';
+  pp.innerHTML=`
+    <div class="ptitle" style="font-size:clamp(1.4rem,3.5vh,2.2rem);margin-bottom:0.3vh">Spot the Mistake</div>
+    <div class="stm-para">${e.para}</div>
+    <div class="stm-count">How many mistakes can you find? There are <strong>${e.count}</strong> mistakes hidden.</div>
+    <button class="stm-btn" onclick="revealStmAnswers()">Show Answers</button>
+    <div class="stm-ans-list" id="stm-ans" style="display:none"></div>`;
+}
+function revealStmAnswers(){
+  const e=cur.data;
+  document.getElementById('stm-ans').style.display='block';
+  document.getElementById('stm-ans').innerHTML='<strong style="color:#E03030">Mistakes found:</strong><br>'+
+    e.errors.map((er,i)=>`<div class="stm-ans-item"><b>${i+1}.</b> <span style="background:#FFDDDD;border-radius:3px;padding:0 3px">"${er.wrong}"</span> → <span style="background:#DDFFDD;border-radius:3px;padding:0 3px">"${er.correct}"</span><br><span style="color:#555;font-size:0.9em">${er.exp}</span></div>`).join('');
+}
+
+function renderWordOfDay(e){
+  const pp=document.getElementById('puzzle-panel');
+  pp.style.cssText='display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:1.5vh 2vw;gap:0.4vh;overflow-y:auto';
+  pp.innerHTML=`
+    <div class="ptitle" style="font-size:clamp(1rem,2.5vh,1.6rem);color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Word of the Day</div>
+    <div class="wod-word">${e.word}</div>
+    <div class="wod-class">${e.cls}</div>
+    <div class="wod-def">${e.def}</div>
+    <div class="wod-example">"${e.example}"</div>
+    <div class="wod-etymology">📚 ${e.origin}</div>
+    <div class="wod-qs" style="width:100%">
+      <div>💡 Can you think of a <strong>synonym</strong> (a word with a similar meaning)?</div>
+      <div>💡 Can you think of an <strong>antonym</strong> (a word with the opposite meaning)?</div>
+      <div>💡 Can you use <strong>${e.word}</strong> in your own sentence?</div>
+    </div>`;
+}
+
+function renderSynAnt(e){
+  const pp=document.getElementById('puzzle-panel');
+  pp.style.cssText='display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:1.5vh 2vw;gap:0.5vh;overflow-y:auto';
+  pp.innerHTML=`
+    <div class="ptitle" style="font-size:clamp(1rem,2.5vh,1.6rem);color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Synonym &amp; Antonym Challenge</div>
+    <div class="sna-word">${e.word}</div>
+    <div class="sna-instr">How many can you think of in 2 minutes? ⏱️</div>
+    <div class="sna-cols" style="width:100%">
+      <div>
+        <div class="sna-col-hdr syn">SYNONYMS</div>
+        <div class="sna-col-body" id="sna-syns">Similar meaning to <em>${e.word}</em></div>
+      </div>
+      <div>
+        <div class="sna-col-hdr ant">ANTONYMS</div>
+        <div class="sna-col-body" id="sna-ants">Opposite meaning to <em>${e.word}</em></div>
+      </div>
+    </div>
+    <button class="sna-btn" onclick="revealSynAnt()">Reveal</button>`;
+}
+function revealSynAnt(){
+  const e=cur.data;
+  document.getElementById('sna-syns').innerHTML=e.syns.join('<br>');
+  document.getElementById('sna-ants').innerHTML=e.ants.join('<br>');
+}
+
+function renderMagicNumber(e){
+  const pp=document.getElementById('puzzle-panel');
+  pp.style.cssText='display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:1.5vh 2vw;gap:0.5vh;overflow-y:auto';
+  pp.innerHTML=`
+    <div class="ptitle" style="margin-bottom:0.3vh">Today's Magic Number</div>
+    <div style="font-size:clamp(0.85rem,1.9vh,1.25rem);color:#888;font-weight:700;text-align:center;margin-bottom:0.5vh">Read the clues and work out the mystery number</div>
+    <div class="mn-clues" style="width:100%">
+      ${e.clues.map((c,i)=>`<div class="mn-clue"><div class="mn-clue-num">${i+1}</div>${c}</div>`).join('')}
+    </div>
+    <button class="mn-btn" onclick="revealMagicNumber()">Reveal the Number</button>
+    <div class="mn-answer" id="mn-answer">${e.answer}</div>`;
+}
+function revealMagicNumber(){
+  document.getElementById('mn-answer').style.display='block';
+}
+
+function renderShapeDay(e){
+  const pp=document.getElementById('puzzle-panel');
+  pp.style.cssText='display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:1.5vh 2vw;gap:0.4vh;overflow-y:auto';
+  pp.innerHTML=`
+    <div class="ptitle" style="font-size:clamp(1rem,2.5vh,1.6rem);color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Shape of the Day</div>
+    <div class="shp-name">${e.name}</div>
+    <div class="shp-type">${e.type}</div>
+    <div class="shp-qs" style="width:100%">
+      ${e.questions.map(q=>`<div class="shp-q">❓ ${q}</div>`).join('')}
+    </div>
+    <button class="shp-btn" onclick="revealShapeProps()">Show Properties</button>
+    <div class="shp-props" id="shp-props">
+      ${e.properties.map((p,i)=>`<div>✅ ${e.questions[i]}<br><strong>${p}</strong></div>`).join('<hr style="border:none;border-top:1px solid #AED6F1;margin:0.4vh 0">')}
+    </div>`;
+}
+function revealShapeProps(){
+  document.getElementById('shp-props').style.display='block';
+}
+
+function renderEstimation(e){
+  const pp=document.getElementById('puzzle-panel');
+  pp.style.cssText='display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.8vh 2.2vw;gap:0.8vh;overflow-y:auto';
+  pp.innerHTML=`
+    <div class="ptitle" style="margin-bottom:0.2vh">Estimation Station 🔢</div>
+    <div class="est-q">${e.question}</div>
+    <div class="est-instr">Think about your estimate — then share it with the class.</div>
+    <button class="est-btn" onclick="revealEstimation()">Reveal Answer</button>
+    <div class="est-ans" id="est-ans">
+      <div style="font-size:clamp(1.3rem,3.5vh,2.4rem)">${e.answer}</div>
+      <div style="font-size:clamp(0.85rem,1.9vh,1.3rem);color:#145A32;font-weight:700;margin-top:0.5vh">${e.explanation}</div>
+    </div>`;
+}
+function revealEstimation(){
+  document.getElementById('est-ans').style.display='block';
+}
+
+function renderMapChallenge(e){
+  const pp=document.getElementById('puzzle-panel');
+  pp.style.cssText='display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:1.5vh 2vw;gap:0.5vh;overflow-y:auto';
+  pp.innerHTML=`
+    <div class="ptitle" style="font-size:clamp(1rem,2.5vh,1.6rem);color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Map Challenge 🗺️</div>
+    <div class="map-country">${e.country}</div>
+    <div class="map-facts" style="width:100%">
+      ${e.facts.map(f=>`<div>🌍 ${f}</div>`).join('')}
+    </div>
+    <div class="map-qs" style="width:100%">
+      ${e.questions.map((q,i)=>`<div>❓ ${q}</div>`).join('')}
+    </div>
+    <button class="map-btn" onclick="revealMapAnswers()">Show Answers</button>
+    <div class="map-ans" id="map-ans" style="width:100%">
+      ${e.answers.map((a,i)=>`<div>✅ <em>${e.questions[i]}</em><br><strong>${a}</strong></div>`).join('<hr style="border:none;border-top:1px solid #AED6F1;margin:0.4vh 0">')}
+    </div>`;
+}
+function revealMapAnswers(){
+  document.getElementById('map-ans').style.display='block';
+}
+
+function renderTimeline(e){
+  const pp=document.getElementById('puzzle-panel');
+  pp.style.cssText='display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:1.5vh 2vw;gap:0.5vh;overflow-y:auto';
+  // shuffle the events for display
+  const displayOrder=shuffle([...e.events]);
+  pp.innerHTML=`
+    <div class="ptitle" style="font-size:clamp(1rem,2.5vh,1.6rem);color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Timeline Puzzle 📅</div>
+    <div class="ptitle" style="font-size:clamp(1.2rem,3vh,2rem);margin-bottom:0.3vh">${e.title}</div>
+    <div class="tl-instr">Put these events in chronological order (oldest first). Write numbers 1–5 beside each event.</div>
+    <div class="tl-events" style="width:100%">
+      ${displayOrder.map((ev,i)=>`<div class="tl-event"><div class="tl-event-num">${String.fromCharCode(65+i)}</div><div class="tl-event-text">${ev.text}</div></div>`).join('')}
+    </div>
+    <button class="tl-btn" onclick="revealTimeline()">Reveal Order</button>
+    <div id="tl-sorted" style="display:none;width:100%;margin-top:0.5vh">
+      ${[...e.events].sort((a,b)=>a.year-b.year).map((ev,i)=>`<div class="tl-sorted-item"><span class="tl-year">${ev.year<0?Math.abs(ev.year)+' BC':ev.year+' AD'}</span>${ev.text}</div>`).join('')}
+    </div>`;
+}
+function revealTimeline(){
+  document.getElementById('tl-sorted').style.display='block';
+}
+
+function renderWouldYouRather(e){
+  const pp=document.getElementById('puzzle-panel');
+  pp.style.cssText='display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.8vh 2.2vw;gap:0.6vh;overflow-y:auto';
+  pp.innerHTML=`
+    <div class="ptitle" style="margin-bottom:0.2vh">Would You Rather… (Maths) 🤔</div>
+    <div class="wyr-q">${e.question}</div>
+    <div class="wyr-opts" style="width:100%">
+      <div class="wyr-opt">${e.optA}</div>
+      <div class="wyr-or">OR</div>
+      <div class="wyr-opt">${e.optB}</div>
+    </div>
+    <div style="font-size:clamp(0.85rem,1.9vh,1.3rem);color:#888;font-weight:700;text-align:center">Discuss with your partner — which is better and why?</div>
+    <button class="wyr-btn" onclick="revealWouldYouRather()">Show Working</button>
+    <div class="wyr-working" id="wyr-working" style="width:100%">
+      <div><strong>Option A:</strong> ${e.optA}</div>
+      <div style="margin-left:1em;color:#3A9922">${e.workingA}</div>
+      <div style="margin-top:0.4vh"><strong>Option B:</strong> ${e.optB}</div>
+      <div style="margin-left:1em;color:#3A9922">${e.workingB}</div>
+      <div style="margin-top:0.6vh;border-top:2px solid #AED6F1;padding-top:0.4vh;color:#1798d3"><strong>Answer:</strong> ${e.answer}</div>
+    </div>`;
+}
+function revealWouldYouRather(){
+  document.getElementById('wyr-working').style.display='block';
+}
+
+// ═══════════════════════════════════════════════════════════
 // SOLUTIONS
 // ═══════════════════════════════════════════════════════════
 function toggleSols(){
@@ -1155,18 +1740,60 @@ function toggleSols(){
     t.textContent='Number puzzle — solutions';
     const cols=[{lbl:'2 Numbers',items:cur.targets.two.map(t=>solveNum(cur.grid,t,2))},{lbl:'3 Numbers',items:cur.targets.three.map(t=>solveNum(cur.grid,t,3))},{lbl:'4 Numbers',items:cur.targets.four.map(t=>solveNum(cur.grid,t,4))}];
     c.innerHTML=`<div class="sol-cols">${cols.map(col=>`<div><div class="sol-cl">${col.lbl}</div>${col.items.map(s=>`<div class="sol-ci">${s}</div>`).join('')}</div>`).join('')}</div>`;
-  } else {
+  } else if(cur.type==='combined'){
     t.textContent='Combined puzzle — solutions';
     const anaLines=`<b>Main:</b> ${cur.anaSet.main}<br>`+cur.anaSet.bonus.map(b=>`<b>Bonus:</b> ${b.w}`).join('<br>');
     const seqLines=cur.seqs.map(s=>`Next: <b>${s.next}</b> — rule: ${s.rule}`).join('<br>');
     const ttLie=cur.tt.stmts[cur.tt.lie-1];
     const ttLine=`Statement <b>${cur.tt.lie}</b> is the lie: "${ttLie}"`;
-    const oooLines=cur.oooSets.map(s=>`<b>${s.label}:</b> ${s.items[s.odd]} — ${s.reason}`).join('<br>');
+    const oooLines=cur.oooSets.map(s=>`<b>${s.items[s.odd]}</b> — ${s.reason}`).join('<br>');
     c.innerHTML=`
       <p style="font-weight:800;margin-bottom:4px">Anagrams</p><p style="font-size:0.9rem;margin-bottom:12px;line-height:1.8">${anaLines}</p>
       <p style="font-weight:800;margin-bottom:4px">Sequences</p><p style="font-size:0.9rem;margin-bottom:12px;line-height:1.8">${seqLines}</p>
       <p style="font-weight:800;margin-bottom:4px">Two truths &amp; a lie — ${cur.tt.topic}</p><p style="font-size:0.9rem;margin-bottom:12px;line-height:1.6">${ttLine}</p>
       <p style="font-weight:800;margin-bottom:4px">Odd one out</p><p style="font-size:0.9rem;line-height:1.8">${oooLines}</p>`;
+  } else if(cur.type==='spotmistake'){
+    t.textContent='Spot the Mistake — answers';
+    const e=cur.data;
+    c.innerHTML=`<p style="font-size:0.9rem;margin-bottom:8px">There are <b>${e.count}</b> mistakes:</p>`+
+      e.errors.map((er,i)=>`<p style="font-size:0.88rem;margin-bottom:8px;line-height:1.6"><b>${i+1}.</b> <span style="background:#FFDDDD;padding:0 4px;border-radius:3px">"${er.wrong}"</span> → <span style="background:#DDFFDD;padding:0 4px;border-radius:3px">"${er.correct}"</span><br><span style="color:#555">${er.exp}</span></p>`).join('');
+  } else if(cur.type==='wordofday'){
+    const e=cur.data;
+    t.textContent=`Word of the Day — ${e.word}`;
+    c.innerHTML=`<p style="font-size:0.95rem;line-height:1.8"><b>Word class:</b> ${e.cls}<br><b>Definition:</b> ${e.def}<br><b>Example:</b> "${e.example}"<br><b>Origin:</b> ${e.origin}</p>`;
+  } else if(cur.type==='synant'){
+    const e=cur.data;
+    t.textContent=`Synonyms & Antonyms — ${e.word}`;
+    c.innerHTML=`<p style="font-size:0.95rem;line-height:1.8"><b>Synonyms:</b> ${e.syns.join(', ')}<br><b>Antonyms:</b> ${e.ants.join(', ')}</p>`;
+  } else if(cur.type==='magicnumber'){
+    const e=cur.data;
+    t.textContent='Magic Number — answer';
+    c.innerHTML=`<p style="font-size:1.1rem;font-weight:800">The magic number is <span style="font-size:2rem;color:#1798d3">${e.answer}</span></p><p style="font-size:0.9rem;margin-top:8px">Clues given: ${e.clues.join(' — ')}</p>`;
+  } else if(cur.type==='shapeday'){
+    const e=cur.data;
+    t.textContent=`Shape of the Day — ${e.name}`;
+    c.innerHTML=`<p style="font-size:0.88rem;font-weight:800;color:#1798d3;margin-bottom:6px">${e.name} (${e.type})</p>`+
+      e.questions.map((q,i)=>`<p style="font-size:0.88rem;margin-bottom:6px;line-height:1.5"><b>${q}</b><br>${e.properties[i]}</p>`).join('');
+  } else if(cur.type==='estimation'){
+    const e=cur.data;
+    t.textContent='Estimation Station — answer';
+    c.innerHTML=`<p style="font-size:0.95rem;margin-bottom:8px"><b>Question:</b> ${e.question}</p><p style="font-size:1rem;font-weight:800;color:#145A32">${e.answer}</p><p style="font-size:0.9rem;margin-top:6px;color:#555">${e.explanation}</p>`;
+  } else if(cur.type==='mapchallenge'){
+    const e=cur.data;
+    t.textContent=`Map Challenge — ${e.country}`;
+    c.innerHTML=e.questions.map((q,i)=>`<p style="font-size:0.9rem;margin-bottom:8px;line-height:1.5"><b>${q}</b><br>${e.answers[i]}</p>`).join('');
+  } else if(cur.type==='timeline'){
+    const e=cur.data;
+    t.textContent=`Timeline — ${e.title}`;
+    const sorted=[...e.events].sort((a,b)=>a.year-b.year);
+    c.innerHTML=`<p style="font-size:0.9rem;margin-bottom:8px;font-weight:800">Correct chronological order:</p>`+
+      sorted.map((ev,i)=>`<p style="font-size:0.9rem;margin-bottom:4px"><b>${i+1}.</b> <span style="color:#1798d3;font-weight:800">${ev.year<0?Math.abs(ev.year)+' BC':ev.year+' AD'}</span> — ${ev.text}</p>`).join('');
+  } else if(cur.type==='wouldyourather'){
+    const e=cur.data;
+    t.textContent='Would You Rather — working';
+    c.innerHTML=`<p style="font-size:0.88rem;margin-bottom:6px"><b>Option A:</b> ${e.optA}<br><span style="color:#3A9922">${e.workingA}</span></p>
+      <p style="font-size:0.88rem;margin-bottom:6px"><b>Option B:</b> ${e.optB}<br><span style="color:#3A9922">${e.workingB}</span></p>
+      <p style="font-size:0.95rem;font-weight:800;color:#1798d3;border-top:2px solid #EEE;padding-top:8px;margin-top:4px">${e.answer}</p>`;
   }
   document.getElementById('sol-ov').classList.add('on');
   document.getElementById('solbtn').textContent='Hide solutions';solsOpen=true;
