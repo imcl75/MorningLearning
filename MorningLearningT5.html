@@ -1648,21 +1648,27 @@ function revealOddOneOut(btn){
 // NEW PUZZLE RENDERERS
 // ═══════════════════════════════════════════════════════════
 
+function stmAnswerHtml(e){
+  return '<strong style="color:#E03030">Mistakes found:</strong><br>'+
+    e.errors.map((er,i)=>`<div class="stm-ans-item"><b>${i+1}.</b> <span style="background:#FFDDDD;border-radius:3px;padding:0 3px">"${er.wrong}"</span> → <span style="background:#DDFFDD;border-radius:3px;padding:0 3px">"${er.correct}"</span><br><span style="color:#555;font-size:0.9em">${er.exp}</span></div>`).join('');
+}
 function renderSpotMistake(e){
   const pp=document.getElementById('puzzle-panel');
-  pp.style.cssText='display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:1.8vh 2.2vw;gap:0.8vh;overflow-y:auto';
+  pp.style.cssText='display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:1.8vh 2.2vw;gap:0.8vh;overflow:hidden;height:100%';
   pp.innerHTML=`
     <div class="ptitle" style="font-size:clamp(1.4rem,3.5vh,2.2rem);margin-bottom:0.3vh">Spot the Mistake</div>
-    <div class="stm-para">${e.para}</div>
-    <div class="stm-count">How many mistakes can you find? There are <strong>${e.count}</strong> mistakes hidden.</div>
-    <button class="stm-btn" onclick="revealStmAnswers()">Show Answers</button>
-    <div class="stm-ans-list" id="stm-ans" style="display:none"></div>`;
+    <div id="stm-puzzle">
+      <div class="stm-para">${e.para}</div>
+      <div class="stm-count">How many mistakes? There are <strong>${e.count}</strong> hidden.</div>
+      <button class="stm-btn" onclick="revealStmAnswers(this)">Show Answers</button>
+    </div>
+    <div class="stm-ans-list" id="stm-ans" style="display:none">${stmAnswerHtml(e)}</div>`;
 }
-function revealStmAnswers(){
-  const e=cur.dataB||cur.data;
-  document.getElementById('stm-ans').style.display='block';
-  document.getElementById('stm-ans').innerHTML='<strong style="color:#E03030">Mistakes found:</strong><br>'+
-    e.errors.map((er,i)=>`<div class="stm-ans-item"><b>${i+1}.</b> <span style="background:#FFDDDD;border-radius:3px;padding:0 3px">"${er.wrong}"</span> → <span style="background:#DDFFDD;border-radius:3px;padding:0 3px">"${er.correct}"</span><br><span style="color:#555;font-size:0.9em">${er.exp}</span></div>`).join('');
+function revealStmAnswers(btn){
+  const puzzle=document.getElementById('stm-puzzle');
+  const ans=document.getElementById('stm-ans');
+  if(puzzle)puzzle.style.display='none';
+  if(ans)ans.style.display='block';
 }
 
 function renderWordOfDay(e){
@@ -1883,12 +1889,15 @@ function renderPairLiteracy(eA,eB){
     <button class="stm-btn" style="margin-top:0.3vh" onclick="revealWodExamples(this)">Show examples</button>
     <div id="wod-examples" style="display:none;width:100%;background:#F0FFF0;border:2px solid #A9DFBF;border-radius:7px;padding:0.5vh 0.8vw;font-size:clamp(0.8rem,1.8vh,1.2rem);font-weight:700;line-height:1.8"></div>`;
   // Spot the Mistake (right)
+  b.style.cssText+='overflow:hidden;height:100%';
   b.innerHTML=`
     <div class="ptitle">Spot the Mistake</div>
-    <div class="stm-para">${eB.para}</div>
-    <div class="stm-count">There are <strong>${eB.count}</strong> mistakes hidden.</div>
-    <button class="stm-btn" onclick="revealStmAnswers()">Show Answers</button>
-    <div class="stm-ans-list" id="stm-ans" style="display:none"></div>`;
+    <div id="stm-puzzle">
+      <div class="stm-para">${eB.para}</div>
+      <div class="stm-count">There are <strong>${eB.count}</strong> mistakes hidden.</div>
+      <button class="stm-btn" onclick="revealStmAnswers(this)">Show Answers</button>
+    </div>
+    <div class="stm-ans-list" id="stm-ans" style="display:none">${stmAnswerHtml(eB)}</div>`;
 }
 
 function renderPairVocab(eA,eB){
